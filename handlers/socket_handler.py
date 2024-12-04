@@ -27,10 +27,15 @@ async def disconnect():
 
 @sio.event
 async def newDeposit(data):
+    print(data)
     print("New deposit!")
     await utils.send_newDeposit(data)
     await sio.emit('DepositReceived', data)
-
+    
+@sio.event
+async def newMessage(data):
+    print(data)
+    print("New Message!")
 
 async def main():
     max_retries = 20000

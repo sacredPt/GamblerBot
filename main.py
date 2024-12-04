@@ -13,13 +13,14 @@ async def start_bot():
     await dp.start_polling(bot, close_bot_session=False, handle_signals=False)
 
 
+
 async def tasks():
-    Thread(target=run).start()
+    asyncio.create_task(run())
     
-    tasks = [
-        asyncio.create_task(start_bot()),
-    ]
+    tasks = [asyncio.create_task(start_bot())]
+    
     await asyncio.gather(*tasks)
+       
 if __name__ == '__main__':
     DB.run()
     asyncio.run(tasks(), debug=False)

@@ -14,22 +14,10 @@ async def start_bot():
 
 
 async def tasks():
-    '''
-    Запуск бота и socket_handler.py в разных процессах
-    
-    socket_process = await asyncio.create_subprocess_exec(
-        sys.executable, '-u', 'handlers/socket_handler.py',
-        stdout=asyncio.subprocess.PIPE,
-        stderr=asyncio.subprocess.PIPE,
-    )
-    pid = socket_process.pid
-    logger.info(f"Started socket_handler with PID {pid}")
-    '''
     Thread(target=run).start()
+    
     tasks = [
         asyncio.create_task(start_bot()),
-   #     utils.read_subprocess_output(socket_process.stdout),
-    #    utils.read_subprocess_output(socket_process.stderr),
     ]
     await asyncio.gather(*tasks)
 if __name__ == '__main__':

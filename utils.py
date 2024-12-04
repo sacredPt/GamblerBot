@@ -8,6 +8,7 @@ from db import DB, cursor, conn
 import api
 from datetime import datetime
 import asyncio
+
 from pydantic import BaseModel
 from log import create_logger
 
@@ -258,10 +259,9 @@ def country_code_to_flag(country_code):
     code_points = [ord(char) - 0x41 + 0x1F1E6 for char in country_code.upper()]
     return chr(code_points[0]) + chr(code_points[1])
 
+
 def send_newDeposit(data: dict):
-    """
-    Формирование и отправка "отстука"
-    """
+    
     months = [
         "января", "февраля", "марта", "апреля", "мая", "июня", 
         "июля", "августа", "сентября", "октября", "ноября", "декабря"
@@ -307,6 +307,7 @@ def send_newDeposit(data: dict):
     DB.update_without_user_id(column="all_time_balance", new_data=new_bot_all_time_balance, table=DB.bot_info)
     DB.update_without_user_id(column="promo_activations", new_data=new_bot_all_promo_activations, table=DB.bot_info)
     DB.update_without_user_id(column="deposits", new_data=new_bot_deposits, table=DB.bot_info)
+    
     cursor.execute(f"UPDATE promocodes SET activation_count = ? WHERE name = ?", (new_promo_activations, data['mammothPromo']))
     cursor.execute(f"UPDATE promocodes SET deposit = ? WHERE name = ?", (new_promo_deposits, data['mammothPromo']))
     conn.commit()

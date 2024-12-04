@@ -5977,3 +5977,5 @@ reply_markup
 2024-12-03 15:57:45,303 - aiogram.event - INFO - Update id=201673999 is handled. Duration 21500 ms by bot id=7000214552
 2024-12-03 15:58:12,906 - aiogram.dispatcher - INFO - Polling stopped
 2024-12-03 15:58:12,907 - aiogram.dispatcher - INFO - Polling stopped for bot @stack_adbot id=7000214552 - 'TON AIRDROP'
+2024-12-04 10:33:33,628 - asyncio - ERROR - Unclosed client session
+client_session: <aiohttp.client.ClientSession object at 0x00000293A97E1650>

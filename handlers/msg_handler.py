@@ -6,6 +6,7 @@ import utils
 from db import DB, cursor, conn
 import api
 from log import create_logger
+import handlers.cmd_handler as cmd_handler
 logger = create_logger(__name__)
 
 
@@ -69,20 +70,43 @@ async def change_username(msg: types.Message, state: FSMContext):
 @dp.message(States.link_wallet)
 async def link_wallet(msg: types.Message, state: FSMContext):
     if msg.text:
+       
         state_data = await state.get_data()
+        
+        await bot.delete_message(
+            msg.from_user.id,
+            int(state_data["old_msg_id"])
+        )
         wallet_name = str(state_data["wallet_name"]).lower()
         await state.clear()
         result = DB.update(user_id=msg.from_user.id, column=f"{wallet_name}_wallet", new_data=msg.text, table=DB.users_table)
+        
         if result is True:
             if wallet_name == 'usdt':
                 await msg.answer(
                     text=f"<b>💎 Новый адрес USDT TRC20 кошелька сохранен!</b>",
-                    parse_mode='HTML'
+                    parse_mode='HTML',
+                    reply_markup=types.InlineKeyboardMarkup(inline_keyboard=[
+                        [
+                            types.InlineKeyboardButton(text="❄️", callback_data="back_delete")
+                        ]
+                    ]),
+                )
+                await cmd_handler.start(
+                    msg=msg,                       
+                    state=state, 
+                    user_id=msg.from_user.id, 
+                    edit_msg=True
                 )
             else:
                 await msg.answer(
                     text=f"<b>💎 Новый адрес BTC кошелька сохранен!</b>",
-                    parse_mode='HTML'
+                    parse_mode='HTML',
+                    reply_markup=types.InlineKeyboardMarkup(inline_keyboard=[
+                        [
+                            types.InlineKeyboardButton(text="❄️", callback_data="back_delete")
+                        ]
+                    ]),
                 )
         else:
             await msg.answer(

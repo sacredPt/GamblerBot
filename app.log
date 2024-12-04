@@ -6013,3 +6013,496 @@ client_session: <aiohttp.client.ClientSession object at 0x000001B08B429810>
 2024-12-04 10:54:24,394 - aiogram.dispatcher - INFO - Polling stopped for bot @stack_adbot id=7000214552 - 'TON AIRDROP'
 2024-12-04 10:54:24,581 - asyncio - ERROR - Unclosed client session
 client_session: <aiohttp.client.ClientSession object at 0x000001C524CFBF50>
+2024-12-04 11:55:56,392 - aiogram.dispatcher - INFO - Start polling
+2024-12-04 11:55:56,876 - aiogram.dispatcher - INFO - Run polling for bot @stack_adbot id=7000214552 - 'TON AIRDROP'
+2024-12-04 11:56:02,031 - aiogram.event - INFO - Update id=201674019 is handled. Duration 375 ms by bot id=7000214552
+2024-12-04 11:56:03,395 - aiogram.event - INFO - Update id=201674020 is handled. Duration 469 ms by bot id=7000214552
+2024-12-04 11:56:05,097 - handlers.inline_handler - INFO - Received inline callback "link_wallet" from @destroyeddd
+2024-12-04 11:56:05,227 - aiogram.event - INFO - Update id=201674021 is handled. Duration 125 ms by bot id=7000214552
+2024-12-04 11:56:06,915 - handlers.inline_handler - INFO - Received inline callback "link_wallet_USDT" from @destroyeddd
+2024-12-04 11:56:07,010 - aiogram.event - INFO - Update id=201674022 is handled. Duration 92 ms by bot id=7000214552
+2024-12-04 11:56:07,639 - handlers.inline_handler - INFO - Received inline callback "back_mainV2" from @destroyeddd
+2024-12-04 11:56:07,641 - aiogram.event - INFO - Update id=201674023 is handled. Duration 16 ms by bot id=7000214552
+2024-12-04 11:56:18,660 - aiogram.event - INFO - Update id=201674018 is handled. Duration 21265 ms by bot id=7000214552
+2024-12-04 11:56:22,679 - aiogram.dispatcher - INFO - Polling stopped
+2024-12-04 11:56:22,680 - aiogram.dispatcher - INFO - Polling stopped for bot @stack_adbot id=7000214552 - 'TON AIRDROP'
+2024-12-04 11:56:22,920 - asyncio - ERROR - Unclosed client session
+client_session: <aiohttp.client.ClientSession object at 0x000001D7B67FBF50>
+2024-12-04 11:56:41,641 - aiogram.dispatcher - INFO - Start polling
+2024-12-04 11:56:41,955 - aiogram.dispatcher - INFO - Run polling for bot @stack_adbot id=7000214552 - 'TON AIRDROP'
+2024-12-04 11:56:42,317 - aiogram.event - INFO - Update id=201674025 is handled. Duration 265 ms by bot id=7000214552
+2024-12-04 11:56:43,959 - aiogram.event - INFO - Update id=201674027 is handled. Duration 234 ms by bot id=7000214552
+2024-12-04 11:56:45,021 - handlers.inline_handler - INFO - Received inline callback "link_wallet" from @destroyeddd
+2024-12-04 11:56:45,275 - aiogram.event - INFO - Update id=201674028 is handled. Duration 250 ms by bot id=7000214552
+2024-12-04 11:56:46,522 - handlers.inline_handler - INFO - Received inline callback "link_wallet_USDT" from @destroyeddd
+2024-12-04 11:56:46,614 - aiogram.event - INFO - Update id=201674029 is handled. Duration 94 ms by bot id=7000214552
+2024-12-04 11:56:47,204 - handlers.inline_handler - INFO - Received inline callback "back_main" from @destroyeddd
+2024-12-04 11:56:47,391 - aiogram.event - INFO - Update id=201674030 is handled. Duration 188 ms by bot id=7000214552
+2024-12-04 11:56:48,718 - aiogram.event - INFO - Update id=201674031 is handled. Duration 186 ms by bot id=7000214552
+2024-12-04 11:56:50,507 - handlers.inline_handler - INFO - Received inline callback "link_wallet" from @destroyeddd
+2024-12-04 11:56:50,644 - aiogram.event - INFO - Update id=201674032 is handled. Duration 141 ms by bot id=7000214552
+2024-12-04 11:56:53,003 - handlers.inline_handler - INFO - Received inline callback "link_wallet_USDT" from @destroyeddd
+2024-12-04 11:56:53,129 - aiogram.event - INFO - Update id=201674033 is handled. Duration 125 ms by bot id=7000214552
+2024-12-04 11:56:55,113 - aiogram.event - INFO - Update id=201674034 is handled. Duration 157 ms by bot id=7000214552
+2024-12-04 11:57:03,335 - aiogram.event - INFO - Update id=201674026 is handled. Duration 21280 ms by bot id=7000214552
+2024-12-04 11:57:03,357 - aiogram.event - INFO - Update id=201674024 is handled. Duration 21296 ms by bot id=7000214552
+2024-12-04 11:57:25,220 - aiogram.dispatcher - ERROR - Failed to fetch updates - TelegramNetworkError: HTTP Client says - ServerDisconnectedError: Server disconnected
+2024-12-04 11:57:25,222 - aiogram.dispatcher - WARNING - Sleep for 1.000000 seconds and try again... (tryings = 0, bot id = 7000214552)
+2024-12-04 11:57:36,451 - aiogram.dispatcher - INFO - Connection established (tryings = 1, bot id = 7000214552)
+2024-12-04 11:59:14,335 - aiogram.dispatcher - INFO - Polling stopped
+2024-12-04 11:59:14,336 - aiogram.dispatcher - INFO - Polling stopped for bot @stack_adbot id=7000214552 - 'TON AIRDROP'
+2024-12-04 11:59:14,555 - asyncio - ERROR - Unclosed client session
+client_session: <aiohttp.client.ClientSession object at 0x00000265A7661E10>
+2024-12-04 11:59:21,818 - aiogram.dispatcher - INFO - Start polling
+2024-12-04 11:59:22,125 - aiogram.dispatcher - INFO - Run polling for bot @stack_adbot id=7000214552 - 'TON AIRDROP'
+2024-12-04 11:59:22,748 - aiogram.event - INFO - Update id=201674036 is handled. Duration 500 ms by bot id=7000214552
+2024-12-04 11:59:24,370 - handlers.inline_handler - INFO - Received inline callback "link_wallet" from @destroyeddd
+2024-12-04 11:59:24,584 - aiogram.event - INFO - Update id=201674038 is handled. Duration 217 ms by bot id=7000214552
+2024-12-04 11:59:25,770 - handlers.inline_handler - INFO - Received inline callback "link_wallet_USDT" from @destroyeddd
+2024-12-04 11:59:25,860 - aiogram.event - INFO - Update id=201674039 is handled. Duration 94 ms by bot id=7000214552
+2024-12-04 11:59:28,173 - aiogram.event - INFO - Update id=201674040 is not handled. Duration 0 ms by bot id=7000214552
+2024-12-04 11:59:28,174 - aiogram.event - ERROR - Cause exception while process update id=201674040 by bot id=7000214552
+TypeError: int() argument must be a string, a bytes-like object or a real number, not 'NoneType'
+Traceback (most recent call last):
+  File "C:\Users\PAVEL\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\LocalCache\local-packages\Python311\site-packages\aiogram\dispatcher\dispatcher.py", line 309, in _process_update
+    response = await self.feed_update(bot, update, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\PAVEL\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\LocalCache\local-packages\Python311\site-packages\aiogram\dispatcher\dispatcher.py", line 158, in feed_update
+    response = await self.update.wrap_outer_middleware(
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\PAVEL\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\LocalCache\local-packages\Python311\site-packages\aiogram\dispatcher\middlewares\error.py", line 25, in __call__
+    return await handler(event, data)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\PAVEL\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\LocalCache\local-packages\Python311\site-packages\aiogram\dispatcher\middlewares\user_context.py", line 49, in __call__
+    return await handler(event, data)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\PAVEL\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\LocalCache\local-packages\Python311\site-packages\aiogram\fsm\middleware.py", line 42, in __call__
+    return await handler(event, data)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\PAVEL\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\LocalCache\local-packages\Python311\site-packages\aiogram\dispatcher\event\telegram.py", line 121, in trigger
+    return await wrapped_inner(event, kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\PAVEL\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\LocalCache\local-packages\Python311\site-packages\aiogram\dispatcher\event\handler.py", line 43, in call
+    return await wrapped()
+           ^^^^^^^^^^^^^^^
+  File "C:\Users\PAVEL\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\LocalCache\local-packages\Python311\site-packages\aiogram\dispatcher\dispatcher.py", line 276, in _listen_update
+    return await self.propagate_event(update_type=update_type, event=event, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\PAVEL\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\LocalCache\local-packages\Python311\site-packages\aiogram\dispatcher\router.py", line 142, in propagate_event
+    return await observer.wrap_outer_middleware(_wrapped, event=event, data=kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\PAVEL\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\LocalCache\local-packages\Python311\site-packages\aiogram\dispatcher\router.py", line 137, in _wrapped
+    return await self._propagate_event(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\PAVEL\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\LocalCache\local-packages\Python311\site-packages\aiogram\dispatcher\router.py", line 162, in _propagate_event
+    response = await observer.trigger(event, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\PAVEL\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\LocalCache\local-packages\Python311\site-packages\aiogram\dispatcher\event\telegram.py", line 121, in trigger
+    return await wrapped_inner(event, kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\PAVEL\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\LocalCache\local-packages\Python311\site-packages\aiogram\dispatcher\event\handler.py", line 43, in call
+    return await wrapped()
+           ^^^^^^^^^^^^^^^
+  File "C:\Users\PAVEL\Desktop\new\tg_bot\handlers\msg_handler.py", line 77, in link_wallet
+    int(state_data["old_msg_id"])
+TypeError: int() argument must be a string, a bytes-like object or a real number, not 'NoneType'
+2024-12-04 11:59:44,009 - aiogram.event - INFO - Update id=201674037 is handled. Duration 21702 ms by bot id=7000214552
+2024-12-04 11:59:44,418 - aiogram.event - INFO - Update id=201674035 is handled. Duration 22171 ms by bot id=7000214552
+2024-12-04 11:59:46,518 - aiogram.dispatcher - INFO - Polling stopped
+2024-12-04 11:59:46,520 - aiogram.dispatcher - INFO - Polling stopped for bot @stack_adbot id=7000214552 - 'TON AIRDROP'
+2024-12-04 11:59:46,710 - asyncio - ERROR - Unclosed client session
+client_session: <aiohttp.client.ClientSession object at 0x0000026DAA44A010>
+2024-12-04 11:59:54,292 - aiogram.dispatcher - INFO - Start polling
+2024-12-04 11:59:54,524 - aiogram.dispatcher - INFO - Run polling for bot @stack_adbot id=7000214552 - 'TON AIRDROP'
+2024-12-04 11:59:54,915 - aiogram.event - INFO - Update id=201674045 is handled. Duration 265 ms by bot id=7000214552
+2024-12-04 11:59:54,917 - aiogram.event - INFO - Update id=201674043 is handled. Duration 265 ms by bot id=7000214552
+2024-12-04 11:59:56,325 - aiogram.event - INFO - Update id=201674046 is handled. Duration 171 ms by bot id=7000214552
+2024-12-04 11:59:57,083 - handlers.inline_handler - INFO - Received inline callback "link_wallet" from @destroyeddd
+2024-12-04 11:59:57,192 - aiogram.event - INFO - Update id=201674047 is handled. Duration 109 ms by bot id=7000214552
+2024-12-04 11:59:57,868 - handlers.inline_handler - INFO - Received inline callback "link_wallet_USDT" from @destroyeddd
+2024-12-04 11:59:57,966 - aiogram.event - INFO - Update id=201674048 is handled. Duration 92 ms by bot id=7000214552
+2024-12-04 11:59:59,324 - aiogram.event - INFO - Update id=201674049 is not handled. Duration 0 ms by bot id=7000214552
+2024-12-04 11:59:59,325 - aiogram.event - ERROR - Cause exception while process update id=201674049 by bot id=7000214552
+TypeError: int() argument must be a string, a bytes-like object or a real number, not 'NoneType'
+Traceback (most recent call last):
+  File "C:\Users\PAVEL\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\LocalCache\local-packages\Python311\site-packages\aiogram\dispatcher\dispatcher.py", line 309, in _process_update
+    response = await self.feed_update(bot, update, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\PAVEL\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\LocalCache\local-packages\Python311\site-packages\aiogram\dispatcher\dispatcher.py", line 158, in feed_update
+    response = await self.update.wrap_outer_middleware(
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\PAVEL\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\LocalCache\local-packages\Python311\site-packages\aiogram\dispatcher\middlewares\error.py", line 25, in __call__
+    return await handler(event, data)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\PAVEL\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\LocalCache\local-packages\Python311\site-packages\aiogram\dispatcher\middlewares\user_context.py", line 49, in __call__
+    return await handler(event, data)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\PAVEL\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\LocalCache\local-packages\Python311\site-packages\aiogram\fsm\middleware.py", line 42, in __call__
+    return await handler(event, data)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\PAVEL\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\LocalCache\local-packages\Python311\site-packages\aiogram\dispatcher\event\telegram.py", line 121, in trigger
+    return await wrapped_inner(event, kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\PAVEL\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\LocalCache\local-packages\Python311\site-packages\aiogram\dispatcher\event\handler.py", line 43, in call
+    return await wrapped()
+           ^^^^^^^^^^^^^^^
+  File "C:\Users\PAVEL\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\LocalCache\local-packages\Python311\site-packages\aiogram\dispatcher\dispatcher.py", line 276, in _listen_update
+    return await self.propagate_event(update_type=update_type, event=event, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\PAVEL\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\LocalCache\local-packages\Python311\site-packages\aiogram\dispatcher\router.py", line 142, in propagate_event
+    return await observer.wrap_outer_middleware(_wrapped, event=event, data=kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\PAVEL\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\LocalCache\local-packages\Python311\site-packages\aiogram\dispatcher\router.py", line 137, in _wrapped
+    return await self._propagate_event(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\PAVEL\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\LocalCache\local-packages\Python311\site-packages\aiogram\dispatcher\router.py", line 162, in _propagate_event
+    response = await observer.trigger(event, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\PAVEL\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\LocalCache\local-packages\Python311\site-packages\aiogram\dispatcher\event\telegram.py", line 121, in trigger
+    return await wrapped_inner(event, kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\PAVEL\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\LocalCache\local-packages\Python311\site-packages\aiogram\dispatcher\event\handler.py", line 43, in call
+    return await wrapped()
+           ^^^^^^^^^^^^^^^
+  File "C:\Users\PAVEL\Desktop\new\tg_bot\handlers\msg_handler.py", line 78, in link_wallet
+    int(state_data["old_msg_id"])
+TypeError: int() argument must be a string, a bytes-like object or a real number, not 'NoneType'
+2024-12-04 12:00:15,960 - aiogram.event - INFO - Update id=201674042 is handled. Duration 21311 ms by bot id=7000214552
+2024-12-04 12:00:15,985 - aiogram.event - INFO - Update id=201674044 is handled. Duration 21344 ms by bot id=7000214552
+2024-12-04 12:00:16,081 - aiogram.event - INFO - Update id=201674041 is handled. Duration 21436 ms by bot id=7000214552
+2024-12-04 12:00:22,857 - aiogram.dispatcher - INFO - Polling stopped
+2024-12-04 12:00:22,858 - aiogram.dispatcher - INFO - Polling stopped for bot @stack_adbot id=7000214552 - 'TON AIRDROP'
+2024-12-04 12:00:23,073 - asyncio - ERROR - Unclosed client session
+client_session: <aiohttp.client.ClientSession object at 0x000001A1230241D0>
+2024-12-04 12:00:38,009 - aiogram.dispatcher - INFO - Start polling
+2024-12-04 12:00:38,316 - aiogram.dispatcher - INFO - Run polling for bot @stack_adbot id=7000214552 - 'TON AIRDROP'
+2024-12-04 12:00:44,724 - aiogram.event - INFO - Update id=201674051 is handled. Duration 390 ms by bot id=7000214552
+2024-12-04 12:00:45,710 - handlers.inline_handler - INFO - Received inline callback "link_wallet" from @destroyeddd
+2024-12-04 12:00:45,972 - aiogram.event - INFO - Update id=201674052 is handled. Duration 265 ms by bot id=7000214552
+2024-12-04 12:00:46,713 - handlers.inline_handler - INFO - Received inline callback "link_wallet_USDT" from @destroyeddd
+2024-12-04 12:00:46,832 - aiogram.event - INFO - Update id=201674053 is handled. Duration 125 ms by bot id=7000214552
+2024-12-04 12:00:48,675 - aiogram.event - INFO - Update id=201674054 is not handled. Duration 0 ms by bot id=7000214552
+2024-12-04 12:00:48,675 - aiogram.event - ERROR - Cause exception while process update id=201674054 by bot id=7000214552
+TypeError: int() argument must be a string, a bytes-like object or a real number, not 'NoneType'
+Traceback (most recent call last):
+  File "C:\Users\PAVEL\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\LocalCache\local-packages\Python311\site-packages\aiogram\dispatcher\dispatcher.py", line 309, in _process_update
+    response = await self.feed_update(bot, update, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\PAVEL\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\LocalCache\local-packages\Python311\site-packages\aiogram\dispatcher\dispatcher.py", line 158, in feed_update
+    response = await self.update.wrap_outer_middleware(
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\PAVEL\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\LocalCache\local-packages\Python311\site-packages\aiogram\dispatcher\middlewares\error.py", line 25, in __call__
+    return await handler(event, data)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\PAVEL\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\LocalCache\local-packages\Python311\site-packages\aiogram\dispatcher\middlewares\user_context.py", line 49, in __call__
+    return await handler(event, data)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\PAVEL\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\LocalCache\local-packages\Python311\site-packages\aiogram\fsm\middleware.py", line 42, in __call__
+    return await handler(event, data)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\PAVEL\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\LocalCache\local-packages\Python311\site-packages\aiogram\dispatcher\event\telegram.py", line 121, in trigger
+    return await wrapped_inner(event, kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\PAVEL\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\LocalCache\local-packages\Python311\site-packages\aiogram\dispatcher\event\handler.py", line 43, in call
+    return await wrapped()
+           ^^^^^^^^^^^^^^^
+  File "C:\Users\PAVEL\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\LocalCache\local-packages\Python311\site-packages\aiogram\dispatcher\dispatcher.py", line 276, in _listen_update
+    return await self.propagate_event(update_type=update_type, event=event, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\PAVEL\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\LocalCache\local-packages\Python311\site-packages\aiogram\dispatcher\router.py", line 142, in propagate_event
+    return await observer.wrap_outer_middleware(_wrapped, event=event, data=kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\PAVEL\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\LocalCache\local-packages\Python311\site-packages\aiogram\dispatcher\router.py", line 137, in _wrapped
+    return await self._propagate_event(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\PAVEL\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\LocalCache\local-packages\Python311\site-packages\aiogram\dispatcher\router.py", line 162, in _propagate_event
+    response = await observer.trigger(event, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\PAVEL\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\LocalCache\local-packages\Python311\site-packages\aiogram\dispatcher\event\telegram.py", line 121, in trigger
+    return await wrapped_inner(event, kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\PAVEL\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\LocalCache\local-packages\Python311\site-packages\aiogram\dispatcher\event\handler.py", line 43, in call
+    return await wrapped()
+           ^^^^^^^^^^^^^^^
+  File "C:\Users\PAVEL\Desktop\new\tg_bot\handlers\msg_handler.py", line 78, in link_wallet
+    int(state_data["old_msg_id"])
+TypeError: int() argument must be a string, a bytes-like object or a real number, not 'NoneType'
+2024-12-04 12:01:03,908 - aiogram.event - INFO - Update id=201674050 is handled. Duration 21563 ms by bot id=7000214552
+2024-12-04 12:01:36,217 - aiogram.dispatcher - INFO - Polling stopped
+2024-12-04 12:01:36,219 - aiogram.dispatcher - INFO - Polling stopped for bot @stack_adbot id=7000214552 - 'TON AIRDROP'
+2024-12-04 12:01:36,428 - asyncio - ERROR - Unclosed client session
+client_session: <aiohttp.client.ClientSession object at 0x000002195C6159D0>
+2024-12-04 12:01:43,413 - aiogram.dispatcher - INFO - Start polling
+2024-12-04 12:01:43,715 - aiogram.dispatcher - INFO - Run polling for bot @stack_adbot id=7000214552 - 'TON AIRDROP'
+2024-12-04 12:01:44,289 - aiogram.event - INFO - Update id=201674056 is handled. Duration 453 ms by bot id=7000214552
+2024-12-04 12:01:45,347 - handlers.inline_handler - INFO - Received inline callback "link_wallet" from @destroyeddd
+2024-12-04 12:01:45,455 - aiogram.event - INFO - Update id=201674057 is handled. Duration 109 ms by bot id=7000214552
+2024-12-04 12:01:46,070 - handlers.inline_handler - INFO - Received inline callback "link_wallet_USDT" from @destroyeddd
+2024-12-04 12:01:46,185 - aiogram.event - INFO - Update id=201674058 is handled. Duration 109 ms by bot id=7000214552
+2024-12-04 12:01:48,101 - aiogram.event - INFO - Update id=201674059 is handled. Duration 202 ms by bot id=7000214552
+2024-12-04 12:02:05,201 - aiogram.event - INFO - Update id=201674055 is handled. Duration 21359 ms by bot id=7000214552
+2024-12-04 12:02:08,000 - aiogram.event - INFO - Update id=201674060 is handled. Duration 139 ms by bot id=7000214552
+2024-12-04 12:02:09,588 - aiogram.event - INFO - Update id=201674061 is handled. Duration 186 ms by bot id=7000214552
+2024-12-04 12:02:10,563 - handlers.inline_handler - INFO - Received inline callback "link_wallet" from @neparadisee
+2024-12-04 12:02:10,718 - aiogram.event - INFO - Update id=201674062 is handled. Duration 155 ms by bot id=7000214552
+2024-12-04 12:02:11,464 - handlers.inline_handler - INFO - Received inline callback "link_wallet_USDT" from @neparadisee
+2024-12-04 12:02:11,556 - aiogram.event - INFO - Update id=201674063 is handled. Duration 94 ms by bot id=7000214552
+2024-12-04 12:02:12,916 - aiogram.event - INFO - Update id=201674064 is handled. Duration 203 ms by bot id=7000214552
+2024-12-04 12:02:13,868 - aiogram.event - INFO - Update id=201674065 is handled. Duration 110 ms by bot id=7000214552
+2024-12-04 12:02:15,215 - aiogram.event - INFO - Update id=201674066 is handled. Duration 234 ms by bot id=7000214552
+2024-12-04 12:02:17,812 - handlers.inline_handler - INFO - Received inline callback "link_wallet" from @destroyeddd
+2024-12-04 12:02:17,913 - aiogram.event - INFO - Update id=201674067 is handled. Duration 109 ms by bot id=7000214552
+2024-12-04 12:02:19,878 - handlers.inline_handler - INFO - Received inline callback "link_wallet_USDT" from @destroyeddd
+2024-12-04 12:02:20,021 - aiogram.event - INFO - Update id=201674068 is handled. Duration 141 ms by bot id=7000214552
+2024-12-04 12:02:23,227 - aiogram.event - INFO - Update id=201674069 is handled. Duration 186 ms by bot id=7000214552
+2024-12-04 12:02:25,350 - aiogram.event - INFO - Update id=201674070 is handled. Duration 125 ms by bot id=7000214552
+2024-12-04 12:02:26,226 - aiogram.event - INFO - Update id=201674071 is handled. Duration 186 ms by bot id=7000214552
+2024-12-04 12:02:26,870 - handlers.inline_handler - INFO - Received inline callback "link_wallet" from @neparadisee
+2024-12-04 12:02:26,980 - aiogram.event - INFO - Update id=201674072 is handled. Duration 108 ms by bot id=7000214552
+2024-12-04 12:02:28,075 - handlers.inline_handler - INFO - Received inline callback "link_wallet_USDT" from @neparadisee
+2024-12-04 12:02:28,341 - aiogram.event - INFO - Update id=201674073 is handled. Duration 265 ms by bot id=7000214552
+2024-12-04 12:02:34,727 - handlers.inline_handler - INFO - Received inline callback "back_main" from @neparadisee
+2024-12-04 12:02:34,917 - aiogram.event - INFO - Update id=201674074 is handled. Duration 188 ms by bot id=7000214552
+2024-12-04 12:02:36,001 - aiogram.event - INFO - Update id=201674075 is handled. Duration 186 ms by bot id=7000214552
+2024-12-04 12:03:26,330 - aiogram.dispatcher - ERROR - Failed to fetch updates - TelegramNetworkError: HTTP Client says - ServerDisconnectedError: Server disconnected
+2024-12-04 12:03:26,331 - aiogram.dispatcher - WARNING - Sleep for 1.000000 seconds and try again... (tryings = 0, bot id = 7000214552)
+2024-12-04 12:03:58,613 - aiogram.dispatcher - INFO - Connection established (tryings = 1, bot id = 7000214552)
+2024-12-04 12:05:37,935 - aiogram.dispatcher - INFO - Polling stopped
+2024-12-04 12:05:37,937 - aiogram.dispatcher - INFO - Polling stopped for bot @stack_adbot id=7000214552 - 'TON AIRDROP'
+2024-12-04 12:05:38,156 - asyncio - ERROR - Unclosed client session
+client_session: <aiohttp.client.ClientSession object at 0x000001B6629FBF90>
+2024-12-04 12:05:45,118 - aiogram.dispatcher - INFO - Start polling
+2024-12-04 12:05:45,418 - aiogram.dispatcher - INFO - Run polling for bot @stack_adbot id=7000214552 - 'TON AIRDROP'
+2024-12-04 12:05:45,919 - aiogram.event - INFO - Update id=201674077 is handled. Duration 375 ms by bot id=7000214552
+2024-12-04 12:05:47,581 - aiogram.event - INFO - Update id=201674078 is handled. Duration 375 ms by bot id=7000214552
+2024-12-04 12:05:48,457 - handlers.inline_handler - INFO - Received inline callback "link_wallet" from @destroyeddd
+2024-12-04 12:05:48,635 - aiogram.event - INFO - Update id=201674079 is handled. Duration 171 ms by bot id=7000214552
+2024-12-04 12:05:49,455 - handlers.inline_handler - INFO - Received inline callback "link_wallet_USDT" from @destroyeddd
+2024-12-04 12:05:49,696 - aiogram.event - INFO - Update id=201674080 is handled. Duration 234 ms by bot id=7000214552
+2024-12-04 12:05:51,194 - aiogram.event - INFO - Update id=201674081 is handled. Duration 234 ms by bot id=7000214552
+2024-12-04 12:05:52,270 - handlers.inline_handler - INFO - Received inline callback "back_delete" from @destroyeddd
+2024-12-04 12:05:52,421 - aiogram.event - INFO - Update id=201674082 is handled. Duration 155 ms by bot id=7000214552
+2024-12-04 12:06:05,297 - aiogram.event - INFO - Update id=201674083 is handled. Duration 125 ms by bot id=7000214552
+2024-12-04 12:06:06,343 - aiogram.event - INFO - Update id=201674084 is handled. Duration 296 ms by bot id=7000214552
+2024-12-04 12:06:06,829 - aiogram.event - INFO - Update id=201674076 is handled. Duration 21296 ms by bot id=7000214552
+2024-12-04 12:06:07,654 - handlers.inline_handler - INFO - Received inline callback "link_wallet" from @neparadisee
+2024-12-04 12:06:07,750 - aiogram.event - INFO - Update id=201674085 is handled. Duration 108 ms by bot id=7000214552
+2024-12-04 12:06:08,319 - handlers.inline_handler - INFO - Received inline callback "link_wallet_USDT" from @neparadisee
+2024-12-04 12:06:08,410 - aiogram.event - INFO - Update id=201674086 is handled. Duration 94 ms by bot id=7000214552
+2024-12-04 12:06:10,531 - handlers.inline_handler - INFO - Received inline callback "back_main" from @neparadisee
+2024-12-04 12:06:10,708 - aiogram.event - INFO - Update id=201674087 is handled. Duration 171 ms by bot id=7000214552
+2024-12-04 12:06:11,237 - aiogram.event - INFO - Update id=201674088 is handled. Duration 188 ms by bot id=7000214552
+2024-12-04 12:06:12,193 - handlers.inline_handler - INFO - Received inline callback "link_wallet" from @neparadisee
+2024-12-04 12:06:12,304 - aiogram.event - INFO - Update id=201674089 is handled. Duration 109 ms by bot id=7000214552
+2024-12-04 12:06:13,793 - handlers.inline_handler - INFO - Received inline callback "link_wallet_USDT" from @neparadisee
+2024-12-04 12:06:13,924 - aiogram.event - INFO - Update id=201674090 is handled. Duration 140 ms by bot id=7000214552
+2024-12-04 12:06:16,045 - aiogram.event - INFO - Update id=201674091 is handled. Duration 219 ms by bot id=7000214552
+2024-12-04 12:06:17,760 - handlers.inline_handler - INFO - Received inline callback "back_delete" from @neparadisee
+2024-12-04 12:06:17,853 - aiogram.event - INFO - Update id=201674092 is handled. Duration 94 ms by bot id=7000214552
+2024-12-04 12:06:35,993 - aiogram.event - INFO - Update id=201674094 is handled. Duration 719 ms by bot id=7000214552
+2024-12-04 12:06:37,796 - handlers.inline_handler - INFO - Received inline callback "link_wallet" from @neparadisee
+2024-12-04 12:06:37,899 - aiogram.event - INFO - Update id=201674095 is handled. Duration 109 ms by bot id=7000214552
+2024-12-04 12:06:39,386 - handlers.inline_handler - INFO - Received inline callback "link_wallet_USDT" from @neparadisee
+2024-12-04 12:06:39,473 - aiogram.event - INFO - Update id=201674096 is handled. Duration 94 ms by bot id=7000214552
+2024-12-04 12:06:41,417 - aiogram.event - INFO - Update id=201674097 is handled. Duration 171 ms by bot id=7000214552
+2024-12-04 12:06:45,191 - aiogram.event - INFO - Update id=201674093 is not handled. Duration 11327 ms by bot id=7000214552
+2024-12-04 12:06:45,193 - aiogram.dispatcher - INFO - Polling stopped
+2024-12-04 12:06:45,194 - aiogram.dispatcher - INFO - Polling stopped for bot @stack_adbot id=7000214552 - 'TON AIRDROP'
+2024-12-04 12:06:45,418 - asyncio - ERROR - Unclosed client session
+client_session: <aiohttp.client.ClientSession object at 0x000001F2FFA51E10>
+2024-12-04 12:06:52,463 - aiogram.dispatcher - INFO - Start polling
+2024-12-04 12:06:52,768 - aiogram.dispatcher - INFO - Run polling for bot @stack_adbot id=7000214552 - 'TON AIRDROP'
+2024-12-04 12:06:53,254 - aiogram.event - INFO - Update id=201674099 is handled. Duration 389 ms by bot id=7000214552
+2024-12-04 12:06:54,280 - handlers.inline_handler - INFO - Received inline callback "link_wallet" from @destroyeddd
+2024-12-04 12:06:54,413 - aiogram.event - INFO - Update id=201674101 is handled. Duration 140 ms by bot id=7000214552
+2024-12-04 12:06:55,013 - handlers.inline_handler - INFO - Received inline callback "link_wallet_USDT" from @destroyeddd
+2024-12-04 12:06:55,114 - aiogram.event - INFO - Update id=201674102 is handled. Duration 110 ms by bot id=7000214552
+2024-12-04 12:06:56,729 - aiogram.event - INFO - Update id=201674103 is handled. Duration 265 ms by bot id=7000214552
+2024-12-04 12:06:57,502 - handlers.inline_handler - INFO - Received inline callback "back_delete" from @destroyeddd
+2024-12-04 12:06:57,673 - aiogram.event - INFO - Update id=201674104 is not handled. Duration 172 ms by bot id=7000214552
+2024-12-04 12:06:57,674 - aiogram.event - ERROR - Cause exception while process update id=201674104 by bot id=7000214552
+TelegramBadRequest: Telegram server says - Bad Request: message to delete not found
+Traceback (most recent call last):
+  File "C:\Users\PAVEL\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\LocalCache\local-packages\Python311\site-packages\aiogram\dispatcher\dispatcher.py", line 309, in _process_update
+    response = await self.feed_update(bot, update, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\PAVEL\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\LocalCache\local-packages\Python311\site-packages\aiogram\dispatcher\dispatcher.py", line 158, in feed_update
+    response = await self.update.wrap_outer_middleware(
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\PAVEL\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\LocalCache\local-packages\Python311\site-packages\aiogram\dispatcher\middlewares\error.py", line 25, in __call__
+    return await handler(event, data)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\PAVEL\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\LocalCache\local-packages\Python311\site-packages\aiogram\dispatcher\middlewares\user_context.py", line 49, in __call__
+    return await handler(event, data)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\PAVEL\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\LocalCache\local-packages\Python311\site-packages\aiogram\fsm\middleware.py", line 42, in __call__
+    return await handler(event, data)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\PAVEL\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\LocalCache\local-packages\Python311\site-packages\aiogram\dispatcher\event\telegram.py", line 121, in trigger
+    return await wrapped_inner(event, kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\PAVEL\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\LocalCache\local-packages\Python311\site-packages\aiogram\dispatcher\event\handler.py", line 43, in call
+    return await wrapped()
+           ^^^^^^^^^^^^^^^
+  File "C:\Users\PAVEL\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\LocalCache\local-packages\Python311\site-packages\aiogram\dispatcher\dispatcher.py", line 276, in _listen_update
+    return await self.propagate_event(update_type=update_type, event=event, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\PAVEL\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\LocalCache\local-packages\Python311\site-packages\aiogram\dispatcher\router.py", line 142, in propagate_event
+    return await observer.wrap_outer_middleware(_wrapped, event=event, data=kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\PAVEL\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\LocalCache\local-packages\Python311\site-packages\aiogram\dispatcher\router.py", line 137, in _wrapped
+    return await self._propagate_event(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\PAVEL\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\LocalCache\local-packages\Python311\site-packages\aiogram\dispatcher\router.py", line 162, in _propagate_event
+    response = await observer.trigger(event, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\PAVEL\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\LocalCache\local-packages\Python311\site-packages\aiogram\dispatcher\event\telegram.py", line 121, in trigger
+    return await wrapped_inner(event, kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\PAVEL\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\LocalCache\local-packages\Python311\site-packages\aiogram\dispatcher\event\handler.py", line 43, in call
+    return await wrapped()
+           ^^^^^^^^^^^^^^^
+  File "C:\Users\PAVEL\Desktop\new\tg_bot\handlers\inline_handler.py", line 875, in inline_handler
+    await cmd_handler.start(
+  File "C:\Users\PAVEL\Desktop\new\tg_bot\handlers\cmd_handler.py", line 44, in start
+    await msg.delete()
+  File "C:\Users\PAVEL\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\LocalCache\local-packages\Python311\site-packages\aiogram\methods\base.py", line 84, in emit
+    return await bot(self)
+           ^^^^^^^^^^^^^^^
+  File "C:\Users\PAVEL\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\LocalCache\local-packages\Python311\site-packages\aiogram\client\bot.py", line 485, in __call__
+    return await self.session(self, method, timeout=request_timeout)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\PAVEL\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\LocalCache\local-packages\Python311\site-packages\aiogram\client\session\base.py", line 254, in __call__
+    return cast(TelegramType, await middleware(bot, method))
+                              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\PAVEL\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\LocalCache\local-packages\Python311\site-packages\aiogram\client\session\aiohttp.py", line 189, in make_request
+    response = self.check_response(
+               ^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\PAVEL\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\LocalCache\local-packages\Python311\site-packages\aiogram\client\session\base.py", line 120, in check_response
+    raise TelegramBadRequest(method=method, message=description)
+aiogram.exceptions.TelegramBadRequest: Telegram server says - Bad Request: message to delete not found
+2024-12-04 12:07:14,325 - aiogram.event - INFO - Update id=201674098 is handled. Duration 21452 ms by bot id=7000214552
+2024-12-04 12:07:14,418 - aiogram.event - INFO - Update id=201674100 is handled. Duration 21469 ms by bot id=7000214552
+2024-12-04 12:07:21,408 - aiogram.dispatcher - INFO - Polling stopped for bot @stack_adbot id=7000214552 - 'TON AIRDROP'
+2024-12-04 12:07:21,409 - aiogram.dispatcher - INFO - Polling stopped
+2024-12-04 12:07:21,640 - asyncio - ERROR - Unclosed client session
+client_session: <aiohttp.client.ClientSession object at 0x00000175F494DDD0>
+2024-12-04 12:07:28,823 - aiogram.dispatcher - INFO - Start polling
+2024-12-04 12:07:29,061 - aiogram.dispatcher - INFO - Run polling for bot @stack_adbot id=7000214552 - 'TON AIRDROP'
+2024-12-04 12:07:29,548 - aiogram.event - INFO - Update id=201674106 is handled. Duration 390 ms by bot id=7000214552
+2024-12-04 12:07:30,601 - handlers.inline_handler - INFO - Received inline callback "link_wallet" from @destroyeddd
+2024-12-04 12:07:30,734 - aiogram.event - INFO - Update id=201674108 is handled. Duration 141 ms by bot id=7000214552
+2024-12-04 12:07:31,390 - handlers.inline_handler - INFO - Received inline callback "link_wallet_USDT" from @destroyeddd
+2024-12-04 12:07:31,488 - aiogram.event - INFO - Update id=201674109 is handled. Duration 110 ms by bot id=7000214552
+2024-12-04 12:07:32,754 - aiogram.event - INFO - Update id=201674110 is handled. Duration 250 ms by bot id=7000214552
+2024-12-04 12:07:34,124 - handlers.inline_handler - INFO - Received inline callback "back_delete" from @destroyeddd
+2024-12-04 12:07:34,532 - aiogram.event - INFO - Update id=201674111 is not handled. Duration 421 ms by bot id=7000214552
+2024-12-04 12:07:34,533 - aiogram.event - ERROR - Cause exception while process update id=201674111 by bot id=7000214552
+TelegramBadRequest: Telegram server says - Bad Request: message to delete not found
+Traceback (most recent call last):
+  File "C:\Users\PAVEL\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\LocalCache\local-packages\Python311\site-packages\aiogram\dispatcher\dispatcher.py", line 309, in _process_update
+    response = await self.feed_update(bot, update, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\PAVEL\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\LocalCache\local-packages\Python311\site-packages\aiogram\dispatcher\dispatcher.py", line 158, in feed_update
+    response = await self.update.wrap_outer_middleware(
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\PAVEL\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\LocalCache\local-packages\Python311\site-packages\aiogram\dispatcher\middlewares\error.py", line 25, in __call__
+    return await handler(event, data)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\PAVEL\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\LocalCache\local-packages\Python311\site-packages\aiogram\dispatcher\middlewares\user_context.py", line 49, in __call__
+    return await handler(event, data)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\PAVEL\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\LocalCache\local-packages\Python311\site-packages\aiogram\fsm\middleware.py", line 42, in __call__
+    return await handler(event, data)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\PAVEL\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\LocalCache\local-packages\Python311\site-packages\aiogram\dispatcher\event\telegram.py", line 121, in trigger
+    return await wrapped_inner(event, kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\PAVEL\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\LocalCache\local-packages\Python311\site-packages\aiogram\dispatcher\event\handler.py", line 43, in call
+    return await wrapped()
+           ^^^^^^^^^^^^^^^
+  File "C:\Users\PAVEL\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\LocalCache\local-packages\Python311\site-packages\aiogram\dispatcher\dispatcher.py", line 276, in _listen_update
+    return await self.propagate_event(update_type=update_type, event=event, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\PAVEL\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\LocalCache\local-packages\Python311\site-packages\aiogram\dispatcher\router.py", line 142, in propagate_event
+    return await observer.wrap_outer_middleware(_wrapped, event=event, data=kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\PAVEL\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\LocalCache\local-packages\Python311\site-packages\aiogram\dispatcher\router.py", line 137, in _wrapped
+    return await self._propagate_event(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\PAVEL\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\LocalCache\local-packages\Python311\site-packages\aiogram\dispatcher\router.py", line 162, in _propagate_event
+    response = await observer.trigger(event, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\PAVEL\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\LocalCache\local-packages\Python311\site-packages\aiogram\dispatcher\event\telegram.py", line 121, in trigger
+    return await wrapped_inner(event, kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\PAVEL\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\LocalCache\local-packages\Python311\site-packages\aiogram\dispatcher\event\handler.py", line 43, in call
+    return await wrapped()
+           ^^^^^^^^^^^^^^^
+  File "C:\Users\PAVEL\Desktop\new\tg_bot\handlers\inline_handler.py", line 877, in inline_handler
+    await bot.delete_message(
+  File "C:\Users\PAVEL\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\LocalCache\local-packages\Python311\site-packages\aiogram\client\bot.py", line 1209, in delete_message
+    return await self(call, request_timeout=request_timeout)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\PAVEL\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\LocalCache\local-packages\Python311\site-packages\aiogram\client\bot.py", line 485, in __call__
+    return await self.session(self, method, timeout=request_timeout)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\PAVEL\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\LocalCache\local-packages\Python311\site-packages\aiogram\client\session\base.py", line 254, in __call__
+    return cast(TelegramType, await middleware(bot, method))
+                              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\PAVEL\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\LocalCache\local-packages\Python311\site-packages\aiogram\client\session\aiohttp.py", line 189, in make_request
+    response = self.check_response(
+               ^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\PAVEL\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\LocalCache\local-packages\Python311\site-packages\aiogram\client\session\base.py", line 120, in check_response
+    raise TelegramBadRequest(method=method, message=description)
+aiogram.exceptions.TelegramBadRequest: Telegram server says - Bad Request: message to delete not found
+2024-12-04 12:07:41,950 - aiogram.event - INFO - Update id=201674105 is not handled. Duration 12780 ms by bot id=7000214552
+2024-12-04 12:07:41,951 - aiogram.dispatcher - INFO - Polling stopped
+2024-12-04 12:07:41,952 - aiogram.dispatcher - INFO - Polling stopped for bot @stack_adbot id=7000214552 - 'TON AIRDROP'
+2024-12-04 12:07:41,954 - aiogram.event - INFO - Update id=201674107 is not handled. Duration 12796 ms by bot id=7000214552
+2024-12-04 12:07:42,152 - asyncio - ERROR - Unclosed client session
+client_session: <aiohttp.client.ClientSession object at 0x00000271A781BFD0>
+2024-12-04 12:07:48,925 - aiogram.dispatcher - INFO - Start polling
+2024-12-04 12:07:49,160 - aiogram.dispatcher - INFO - Run polling for bot @stack_adbot id=7000214552 - 'TON AIRDROP'
+2024-12-04 12:07:49,656 - aiogram.event - INFO - Update id=201674113 is handled. Duration 390 ms by bot id=7000214552
+2024-12-04 12:07:50,693 - handlers.inline_handler - INFO - Received inline callback "link_wallet" from @destroyeddd
+2024-12-04 12:07:50,813 - aiogram.event - INFO - Update id=201674115 is handled. Duration 125 ms by bot id=7000214552
+2024-12-04 12:07:51,411 - handlers.inline_handler - INFO - Received inline callback "link_wallet_USDT" from @destroyeddd
+2024-12-04 12:07:51,508 - aiogram.event - INFO - Update id=201674116 is handled. Duration 92 ms by bot id=7000214552
+2024-12-04 12:07:53,387 - aiogram.event - INFO - Update id=201674117 is handled. Duration 202 ms by bot id=7000214552
+2024-12-04 12:07:54,243 - handlers.inline_handler - INFO - Received inline callback "back_delete" from @destroyeddd
+2024-12-04 12:07:54,447 - aiogram.event - INFO - Update id=201674118 is handled. Duration 202 ms by bot id=7000214552
+2024-12-04 12:08:01,270 - aiogram.event - INFO - Update id=201674119 is handled. Duration 359 ms by bot id=7000214552
+2024-12-04 12:08:02,874 - aiogram.event - INFO - Update id=201674120 is handled. Duration 342 ms by bot id=7000214552
+2024-12-04 12:08:03,939 - aiogram.event - INFO - Update id=201674121 is handled. Duration 234 ms by bot id=7000214552
+2024-12-04 12:08:04,723 - handlers.inline_handler - INFO - Received inline callback "link_wallet" from @neparadisee
+2024-12-04 12:08:04,830 - aiogram.event - INFO - Update id=201674122 is handled. Duration 109 ms by bot id=7000214552
+2024-12-04 12:08:05,539 - handlers.inline_handler - INFO - Received inline callback "link_wallet_USDT" from @neparadisee
+2024-12-04 12:08:05,709 - aiogram.event - INFO - Update id=201674123 is handled. Duration 171 ms by bot id=7000214552
+2024-12-04 12:08:06,781 - aiogram.event - INFO - Update id=201674124 is handled. Duration 250 ms by bot id=7000214552
+2024-12-04 12:08:10,638 - aiogram.event - INFO - Update id=201674112 is handled. Duration 21375 ms by bot id=7000214552
+2024-12-04 12:08:10,661 - aiogram.event - INFO - Update id=201674114 is handled. Duration 21390 ms by bot id=7000214552
+2024-12-04 12:09:24,231 - aiogram.dispatcher - INFO - Polling stopped
+2024-12-04 12:09:24,232 - aiogram.dispatcher - INFO - Polling stopped for bot @stack_adbot id=7000214552 - 'TON AIRDROP'
+2024-12-04 12:09:24,457 - asyncio - ERROR - Unclosed client session
+client_session: <aiohttp.client.ClientSession object at 0x000001FE3B5FBF90>
+2024-12-04 12:09:48,982 - aiogram.dispatcher - INFO - Start polling
+2024-12-04 12:09:49,306 - aiogram.dispatcher - INFO - Run polling for bot @stack_adbot id=7000214552 - 'TON AIRDROP'
+2024-12-04 12:10:01,765 - aiogram.event - INFO - Update id=201674126 is handled. Duration 438 ms by bot id=7000214552
+2024-12-04 12:10:02,455 - handlers.inline_handler - INFO - Received inline callback "link_wallet" from @destroyeddd
+2024-12-04 12:10:02,579 - aiogram.event - INFO - Update id=201674127 is handled. Duration 125 ms by bot id=7000214552
+2024-12-04 12:10:03,397 - handlers.inline_handler - INFO - Received inline callback "link_wallet_USDT" from @destroyeddd
+2024-12-04 12:10:03,489 - aiogram.event - INFO - Update id=201674128 is handled. Duration 94 ms by bot id=7000214552
+2024-12-04 12:10:05,216 - aiogram.event - INFO - Update id=201674129 is handled. Duration 359 ms by bot id=7000214552
+2024-12-04 12:10:06,431 - handlers.inline_handler - INFO - Received inline callback "back_delete" from @destroyeddd
+2024-12-04 12:10:06,515 - aiogram.event - INFO - Update id=201674130 is handled. Duration 94 ms by bot id=7000214552
+2024-12-04 12:10:12,905 - aiogram.event - INFO - Update id=201674131 is handled. Duration 125 ms by bot id=7000214552
+2024-12-04 12:10:14,490 - aiogram.event - INFO - Update id=201674132 is handled. Duration 188 ms by bot id=7000214552
+2024-12-04 12:10:15,935 - aiogram.event - INFO - Update id=201674133 is handled. Duration 186 ms by bot id=7000214552
+2024-12-04 12:10:17,511 - aiogram.event - INFO - Update id=201674134 is handled. Duration 171 ms by bot id=7000214552
+2024-12-04 12:10:18,619 - aiogram.event - INFO - Update id=201674135 is handled. Duration 313 ms by bot id=7000214552
+2024-12-04 12:10:19,497 - handlers.inline_handler - INFO - Received inline callback "link_wallet" from @neparadisee
+2024-12-04 12:10:19,583 - aiogram.event - INFO - Update id=201674136 is handled. Duration 92 ms by bot id=7000214552
+2024-12-04 12:10:20,724 - handlers.inline_handler - INFO - Received inline callback "link_wallet_USDT" from @neparadisee
+2024-12-04 12:10:20,813 - aiogram.event - INFO - Update id=201674137 is handled. Duration 94 ms by bot id=7000214552
+2024-12-04 12:10:21,138 - aiogram.event - INFO - Update id=201674125 is handled. Duration 21375 ms by bot id=7000214552

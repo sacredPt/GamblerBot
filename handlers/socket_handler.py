@@ -34,7 +34,7 @@ async def newDeposit(data):
     
 @sio.event
 async def newMessage(data):
-    print(data)
+    #print(data)
     print("New Message!")
 
 async def main():

@@ -56,7 +56,7 @@ async def show_user_profile(call: types.CallbackQuery = None, msg: types.Message
 ├🆔Ваш ID: <code>{user_id}</code>
 ├🦋Ваш никнейм: <code>{DB.get(user_id=user_id, data="username", table=DB.users_table)}</code>
 ├💸Ваш баланс: <code>{DB.get(user_id=user_id, data="balance", table=DB.users_table)}$</code>
-├🫰Процент: <code>{DB.get(user_id=user_id, data="percentage", table=DB.users_table)}%</code>
+├💲Ваш процент с депозитов: <code>{DB.get(user_id=user_id, data="percentage", table=DB.users_table)}%</code>
 ├👛 Привязанные кошельки:
     └ BTC: <code>{btc_wallet}</code>
     └ USDT TRC-20: <code>{usdt_wallet}</code>
@@ -230,7 +230,6 @@ async def promo_view_stats(promo_name: str):
     api_result = await api.get_promo(promo_name)
     promo_data = api_result["data"]
     api_result_stats = await api.get_promo_stats(promo_name)
-    # Получаем список стран с информацией по каждой
     countries = api_result_stats["data"]['countries']
     text = f"""
 <b>📊 Статистика по промокоду - </b><code>{promo_data['name']}</code>
@@ -240,17 +239,17 @@ async def promo_view_stats(promo_name: str):
 ├🎰Отыгрыш: {'Включен' if promo_data['shouldWager'] is True else 'Отключен'}
 </b></blockquote><b>
 📊Статистика по странам (Страна/Активаций/Депозитов/
-Конверсия):</b><blockquote><b>
+Конверсия):</b>
 """    
-    # Выводим информацию в формате (Страна/Активаций/Депозитов/Конверсия)
-    # 🇺🇸 22 / 100 $ / 1.00$
+
+    text+='<blockquote>'
     for country in countries:
         name = country_code_to_flag(country['name'])
         activations = country['activations']
         amount = country['amount']
         conversion = country['conversion']
-        text += (f"{name} {activations} / {amount}$ / {round(conversion, 2)}$\n")
-    text += '</b></blockquote>'
+        text += (f"<b>{name} {activations} / {amount}$ / {round(conversion, 2)}$</b>\n")
+    text += '</blockquote>'
     return text
 
 

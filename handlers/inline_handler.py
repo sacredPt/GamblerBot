@@ -73,11 +73,12 @@ async def inline_handler(call: types.CallbackQuery, state: FSMContext):
         elif call.data == "link_wallet":
             link_wallet_btns = types.InlineKeyboardMarkup(inline_keyboard=[
                 [types.InlineKeyboardButton(text="BTC", callback_data="link_wallet_BTC"), types.InlineKeyboardButton(text="USDT", callback_data="link_wallet_USDT")],
-                [types.InlineKeyboardButton(text="❄️", callback_data="user_profile")]
+                [types.InlineKeyboardButton(text="❄️", callback_data="back_main")]
             ])
             await call.message.edit_text(
-                text="💳 Выберите какой кошелек вы хотите привязать/изменить",
-                reply_markup=link_wallet_btns
+                text="<b>👛 Выберите какой кошелек вы хотите привязать/изменить:</b>",
+                reply_markup=link_wallet_btns,
+                parse_mode='HTML'
             )
         
         elif call.data == "promo_setts":
@@ -142,9 +143,9 @@ async def inline_handler(call: types.CallbackQuery, state: FSMContext):
                 promo_view_text = await utils.promo_view_stats(promocode)
                 inline_keyboard = [
                     [
-                        types.InlineKeyboardButton(text="♻️ Обновить промокод", callback_data=f"updatepromostats_{promocode}"),
-                        types.InlineKeyboardButton(text="✍️ Редактировать промокод", callback_data=f"editpromo_{promocode}"),
-                        types.InlineKeyboardButton(text="❌ Удалить промокод", callback_data=f"deletecode_{promocode}")
+                        types.InlineKeyboardButton(text="♻️ Обновить", callback_data=f"updatepromostats_{promocode}"),
+                        types.InlineKeyboardButton(text="⚙️ Редактировать", callback_data=f"editpromo_{promocode}"),
+                        types.InlineKeyboardButton(text="🗑 Удалить", callback_data=f"deletecode_{promocode}")
                     ],
                     [
                         types.InlineKeyboardButton(text="❄️", callback_data="promo_setts")
@@ -201,20 +202,28 @@ async def inline_handler(call: types.CallbackQuery, state: FSMContext):
         elif "link_wallet_" in str(call.data):
             
             wallet_name = str(call.data).split("_")[2]
-            print(wallet_name)
+            back = types.InlineKeyboardMarkup(inline_keyboard=[
+                [
+                    types.InlineKeyboardButton(text="❄️", callback_data="back_main")
+                ]
+            ])
             if wallet_name == 'USDT':
                 await call.message.edit_text(
-                    text=f"<b>💳 Введите новый адрес вашего USDT TRC20 кошелька</b>",
-                    parse_mode='HTML'
+                    text=f"<b>👛 Введите новый адрес вашего USDT TRC-20 кошелька</b>",
+                    parse_mode='HTML',
+                    reply_markup=back
                 )
             else:
                 await call.message.edit_text(
-                    text=f"<b>💳 Введите новый адрес вашего BTC кошелька</b>", 
-                    parse_mode='HTML'
+                    text=f"<b>👛 Введите новый адрес вашего BTC кошелька</b>", 
+                    parse_mode='HTML',
+                    reply_markup=back
                 )
             
             await state.set_state(States.link_wallet)
             await state.update_data(wallet_name=wallet_name)
+            print(call.message.message_id)
+            await state.update_data(old_msg_id=call.message.message_id)
 
         elif call.data == "payout":
             payout_btns = types.InlineKeyboardMarkup(inline_keyboard=[
@@ -266,7 +275,8 @@ async def inline_handler(call: types.CallbackQuery, state: FSMContext):
             wallet_data = DB.get(user_id=call.from_user.id, data=f"{str(call.data).lower().split('_')[1]}_wallet", table=DB.users_table)
             if wallet_data is None:
                 await call.message.edit_text(
-                    text=f"❌ Укажите {str(call.data).split('_')[1]} кошелек для выплаты"
+                    text=f"<b>🔴 Укажите {str(call.data).split('_')[1]} кошелек для того чтобы совершить выплату</b>",
+                    parse_mode='HTML'
                 )
                 return
             print(wallet_data)
@@ -857,6 +867,11 @@ async def inline_handler(call: types.CallbackQuery, state: FSMContext):
         elif str(call.data).startswith("back_"):
             menu = str(call.data).split("_")[1]
             await state.clear()
+            if menu == "delete":
+                await bot.delete_message(
+                    call.from_user.id,
+                    call.message.message_id
+                ) 
             if menu == "main": await cmd_handler.start(
                 msg=call.message,                       
                 state=state, 

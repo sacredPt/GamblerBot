@@ -5979,3 +5979,18 @@ reply_markup
 2024-12-03 15:58:12,907 - aiogram.dispatcher - INFO - Polling stopped for bot @stack_adbot id=7000214552 - 'TON AIRDROP'
 2024-12-04 10:33:33,628 - asyncio - ERROR - Unclosed client session
 client_session: <aiohttp.client.ClientSession object at 0x00000293A97E1650>
+2024-12-04 10:38:04,834 - aiogram.dispatcher - INFO - Start polling
+2024-12-04 10:38:05,150 - aiogram.dispatcher - INFO - Run polling for bot @stack_adbot id=7000214552 - 'TON AIRDROP'
+2024-12-04 10:38:05,797 - aiogram.event - INFO - Update id=201674010 is handled. Duration 515 ms by bot id=7000214552
+2024-12-04 10:38:05,799 - aiogram.event - INFO - Update id=201674008 is handled. Duration 515 ms by bot id=7000214552
+2024-12-04 10:38:13,050 - aiogram.event - INFO - Update id=201674011 is handled. Duration 203 ms by bot id=7000214552
+2024-12-04 10:38:15,857 - aiogram.event - INFO - Update id=201674012 is handled. Duration 171 ms by bot id=7000214552
+2024-12-04 10:38:26,559 - aiogram.event - INFO - Update id=201674007 is handled. Duration 21281 ms by bot id=7000214552
+2024-12-04 10:38:26,576 - aiogram.event - INFO - Update id=201674009 is handled. Duration 21280 ms by bot id=7000214552
+2024-12-04 10:38:26,761 - aiogram.event - INFO - Update id=201674006 is handled. Duration 21484 ms by bot id=7000214552
+2024-12-04 10:38:29,025 - aiogram.event - INFO - Update id=201674013 is handled. Duration 202 ms by bot id=7000214552
+2024-12-04 10:38:59,029 - aiogram.dispatcher - ERROR - Failed to fetch updates - TelegramNetworkError: HTTP Client says - ServerDisconnectedError: Server disconnected
+2024-12-04 10:38:59,030 - aiogram.dispatcher - WARNING - Sleep for 1.000000 seconds and try again... (tryings = 0, bot id = 7000214552)
+2024-12-04 10:39:10,260 - aiogram.dispatcher - INFO - Connection established (tryings = 1, bot id = 7000214552)
+2024-12-04 10:39:10,263 - aiogram.dispatcher - ERROR - Failed to fetch updates - TelegramNetworkError: HTTP Client says - ServerDisconnectedError: Server disconnected
+2024-12-04 10:39:10,264 - aiogram.dispatcher - WARNING - Sleep for 1.000000 seconds and try again... (tryings = 0, bot id = 7000214552)

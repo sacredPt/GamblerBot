@@ -43,9 +43,11 @@ async def start(msg: types.Message, state: FSMContext, user_id: int = None, edit
                 if edit_msg is True:
                     await msg.delete()
                     await msg.answer(
-                        text="⚙️ Главное меню",
+                        text="⚙️ Главное меню!",
                         reply_markup=start_btns
                     )
+                    
+                    
                 else:
                     await msg.answer(
                         text="⚙️ Главное меню",

@@ -31,6 +31,7 @@ async def inline_handler(call: types.CallbackQuery, state: FSMContext):
             print(user)
             if not user:
                 if admin_solution == 'accept':
+                    
                     DB.update(user_id=target_user_id, column="state", new_data="confirmed", table=DB.unconfirmed_users_table)
                     DB.insert(user_id=target_user_id, tg_username=target_username, tg_firstname="None")
                     await call.message.edit_reply_markup(reply_markup=types.InlineKeyboardMarkup(inline_keyboard=[[types.InlineKeyboardButton(text="✅ Принята!", callback_data="pass")]]))
@@ -65,11 +66,16 @@ async def inline_handler(call: types.CallbackQuery, state: FSMContext):
         
         elif call.data == "change_username":
             await call.message.edit_text(
-                text="⭐️ Введите новый ник, который будет отображаться в отстуке:",
-                reply_markup=types.InlineKeyboardMarkup(inline_keyboard=[[]])
+                text="<b>💭 Введите никнейм, который будет отображаться в отстуке:</b>",
+                reply_markup=types.InlineKeyboardMarkup(inline_keyboard=[
+                    [types.InlineKeyboardButton(text="❄️", callback_data="back_main")]
+                ]),
+                parse_mode='HTML'
             )
+            
             await state.set_state(States.change_username)
-        
+            await state.update_data(old_message=call.message.message_id)
+            
         elif call.data == "link_wallet":
             link_wallet_btns = types.InlineKeyboardMarkup(inline_keyboard=[
                 [types.InlineKeyboardButton(text="BTC", callback_data="link_wallet_BTC"), types.InlineKeyboardButton(text="USDT", callback_data="link_wallet_USDT")],
@@ -80,6 +86,229 @@ async def inline_handler(call: types.CallbackQuery, state: FSMContext):
                 reply_markup=link_wallet_btns,
                 parse_mode='HTML'
             )
+        
+        elif call.data == "notif_setts":
+            buttons = types.InlineKeyboardMarkup(inline_keyboard=[
+                [
+                    types.InlineKeyboardButton(text=f"💸 Депозиты", callback_data=f"dep_settings")
+                ],
+                [
+                    types.InlineKeyboardButton(text=f"💬 Лайв Саппорт", callback_data=f"support_settings")
+                ],
+                [
+                    types.InlineKeyboardButton(text="❄️", callback_data="back_settings")
+                ]
+            ])
+            await call.message.edit_text(text='⚙️ Настройки', reply_markup=buttons)
+        
+        elif call.data == "dep_settings":
+            
+            data = DB.get_notif_user(call.from_user.id)
+            
+            buttons = types.InlineKeyboardMarkup(inline_keyboard=[
+                [
+                    types.InlineKeyboardButton(text=f"{'🔴 Выключить' if data[1] == 1 else '🟢 Включить'}", callback_data=f"{'disabler_deposit' if data[1] == 1 else 'enabler_deposit'}")
+                ],
+                [
+                    types.InlineKeyboardButton(text="❄️", callback_data="notif_setts")
+                ]
+            ])
+            text='''
+<b>⚙️ Настройка уведомлений - <code>Депозиты</code>
+
+🖼 Пример уведомления:
+
+🔥 Хо-хо-хо! Вам пришел депозит!</b>
+
+<blockquote>├❄️Сумма: {sum}
+├🎟Промокод: {promo}
+├🦣Логин мамонта: {mail}
+├🌍Страна: {country}
+├⛓️Хэш транзакции: {hash transaction}
+└🔐Домен: {domain}</blockquote>
+'''
+            await call.message.edit_text(
+                text=text,
+                reply_markup=buttons,
+                parse_mode='HTML'
+            )
+        
+        elif call.data == "support_settings":
+            
+            data = DB.get_notif_user(call.from_user.id)
+            
+            buttons = types.InlineKeyboardMarkup(inline_keyboard=[
+                [
+                    types.InlineKeyboardButton(text=f"{'🔴 Выключить' if data[2] == 1 else '🟢 Включить'}", callback_data=f"{'disabler_support' if data[2] == 1 else 'enabler_support'}")
+                ],
+                [
+                    types.InlineKeyboardButton(text="❄️", callback_data="notif_setts")
+                ]
+            ])
+            text='''
+<b>⚙️ Настройка уведомлений - <code>Live Support</code>
+
+🖼 Пример уведомления:
+
+💬 Пришло новое сообщение в Live Support!</b>
+
+<blockquote>├🦣Логин мамонта: {mail}
+├🌍Страна: {country}
+├🎟Промокод: {promo}
+└🔐Домен: {domain}</blockquote>
+'''
+            await call.message.edit_text(
+                text=text,
+                reply_markup=buttons,
+                parse_mode='HTML'
+            )
+        
+        elif call.data.startswith('enabler_'):
+            mode = call.data.split('_')[1]
+            if mode == 'deposit':
+                DB.edit_notif_user(
+                    call.from_user.id,
+                    'deposit',
+                    1
+                )
+                
+                data = DB.get_notif_user(call.from_user.id)
+
+                buttons = types.InlineKeyboardMarkup(inline_keyboard=[
+                    [
+                        types.InlineKeyboardButton(text=f"{'🔴 Выключить' if data[1] == 1 else '🟢 Включить'}", callback_data=f"{'disabler_deposit' if data[1] == 1 else 'enabler_deposit'}")
+                    ],
+                    [
+                        types.InlineKeyboardButton(text="❄️", callback_data="notif_setts")
+                    ]
+                ])
+                text='''
+<b>⚙️ Настройка уведомлений - <code>Депозиты</code>
+
+🖼 Пример уведомления:
+
+🔥 Хо-хо-хо! Вам пришел депозит!</b>
+
+<blockquote>├❄️Сумма: {sum}
+├🎟Промокод: {promo}
+├🦣Логин мамонта: {mail}
+├🌍Страна: {country}
+├⛓️Хэш транзакции: {hash transaction}
+└🔐Домен: {domain}</blockquote>
+'''
+                await call.message.edit_text(
+                    text=text,
+                    reply_markup=buttons,
+                    parse_mode='HTML'
+                )
+            
+            if mode == 'support':
+                DB.edit_notif_user(
+                    call.from_user.id,
+                    'support',
+                    1
+                )
+                data = DB.get_notif_user(call.from_user.id)
+            
+                buttons = types.InlineKeyboardMarkup(inline_keyboard=[
+                    [
+                        types.InlineKeyboardButton(text=f"{'🔴 Выключить' if data[2] == 1 else '🟢 Включить'}", callback_data=f"{'disabler_support' if data[2] == 1 else 'enabler_support'}")
+                    ],
+                    [
+                        types.InlineKeyboardButton(text="❄️", callback_data="notif_setts")
+                    ]
+                ])
+                text='''
+<b>⚙️ Настройка уведомлений - <code>Live Support</code>
+
+🖼 Пример уведомления:
+
+💬 Пришло новое сообщение в Live Support!</b>
+
+<blockquote>├🦣Логин мамонта: {mail}
+├🌍Страна: {country}
+├🎟Промокод: {promo}
+└🔐Домен: {domain}</blockquote>
+'''
+                await call.message.edit_text(
+                    text=text,
+                    reply_markup=buttons,
+                    parse_mode='HTML'
+                )
+        
+        elif call.data.startswith('disabler_'):
+            mode = call.data.split('_')[1]
+            if mode == 'deposit':
+                DB.edit_notif_user(
+                    call.from_user.id,
+                    'deposit',
+                    0
+                )
+                
+                data = DB.get_notif_user(call.from_user.id)
+
+                buttons = types.InlineKeyboardMarkup(inline_keyboard=[
+                    [
+                        types.InlineKeyboardButton(text=f"{'🔴 Выключить' if data[1] == 1 else '🟢 Включить'}", callback_data=f"{'disabler_deposit' if data[1] == 1 else 'enabler_deposit'}")
+                    ],
+                    [
+                        types.InlineKeyboardButton(text="❄️", callback_data="notif_setts")
+                    ]
+                ])
+                text='''
+<b>⚙️ Настройка уведомлений - <code>Депозиты</code>
+
+🖼 Пример уведомления:
+
+🔥 Хо-хо-хо! Вам пришел депозит!</b>
+
+<blockquote>├❄️Сумма: {sum}
+├🎟Промокод: {promo}
+├🦣Логин мамонта: {mail}
+├🌍Страна: {country}
+├⛓️Хэш транзакции: {hash transaction}
+└🔐Домен: {domain}</blockquote>
+'''
+                await call.message.edit_text(
+                    text=text,
+                    reply_markup=buttons,
+                    parse_mode='HTML'
+                )
+            
+            if mode == 'support':
+                DB.edit_notif_user(
+                    call.from_user.id,
+                    'support',
+                    0
+                )
+                data = DB.get_notif_user(call.from_user.id)
+            
+                buttons = types.InlineKeyboardMarkup(inline_keyboard=[
+                    [
+                        types.InlineKeyboardButton(text=f"{'🔴 Выключить' if data[2] == 1 else '🟢 Включить'}", callback_data=f"{'disabler_support' if data[2] == 1 else 'enabler_support'}")
+                    ],
+                    [
+                        types.InlineKeyboardButton(text="❄️", callback_data="notif_setts")
+                    ]
+                ])
+                text='''
+<b>⚙️ Настройка уведомлений - <code>Live Support</code>
+
+🖼 Пример уведомления:
+
+💬 Пришло новое сообщение в Live Support!</b>
+
+<blockquote>├🦣Логин мамонта: {mail}
+├🌍Страна: {country}
+├🎟Промокод: {promo}
+└🔐Домен: {domain}</blockquote>
+'''
+                await call.message.edit_text(
+                    text=text,
+                    reply_markup=buttons,
+                    parse_mode='HTML'
+                )
+        
         
         elif call.data == "promo_setts":
             
@@ -103,7 +332,7 @@ async def inline_handler(call: types.CallbackQuery, state: FSMContext):
                 )
             inline_keyboard.append(
                     [
-                        types.InlineKeyboardButton(text="❄️", callback_data="back_main")
+                        types.InlineKeyboardButton(text="❄️", callback_data="back_settings")
                     ]  
                 )
             
@@ -162,13 +391,14 @@ async def inline_handler(call: types.CallbackQuery, state: FSMContext):
         
         elif call.data.startswith('deletecode_'):
             promocode = call.data.split('_')[1]
-            text = f'⁉️ Вы уверены, что хотите удалить промокод {promocode}?'
+            text = f'<b>💭 Вы уверены, что хотите удалить промокод <code>{promocode}</code>?</b>'
             btns = types.InlineKeyboardMarkup(inline_keyboard=[
-                [types.InlineKeyboardButton(text="❌ Отменить", callback_data=f"promocodeDelete_decline?{promocode}"), types.InlineKeyboardButton(text="✅ Удалить", callback_data=f"promocodeDelete_accept?{promocode}")]
+                [types.InlineKeyboardButton(text="🔴 Отменить", callback_data=f"statspromo_{promocode}"), types.InlineKeyboardButton(text="🟢 Удалить", callback_data=f"promocodeDelete_accept?{promocode}")]
             ])
             await call.message.edit_text(
                 text=text,
-                reply_markup=btns
+                reply_markup=btns,
+                parse_mode='HTML'
             )
         
         elif call.data.startswith('editpromo_'):
@@ -188,10 +418,9 @@ async def inline_handler(call: types.CallbackQuery, state: FSMContext):
             promo_amount = result[0]
             promo_ubt = result[1]
             text = f'''<b>
-📊 Статистика по промокоду "<code>{promocode}</code>":
-├💰Сумма промокода: <code>{promo_amount}</code>$
-└🎰Отыгрыш: <code>{"включен" if promo_ubt == "enable" else "выключен"}</code></b>
-
+📊 Статистика по промокоду - <code>{promocode}</code>
+<blockquote>├💰Сумма промокода: <code>{promo_amount}</code>$
+└🎰Отыгрыш: <code>{"включен" if promo_ubt == "enable" else "выключен"}</code></blockquote></b>
             ''' 
             await call.message.edit_text(
                 text=text,
@@ -440,13 +669,14 @@ async def inline_handler(call: types.CallbackQuery, state: FSMContext):
                     parse_mode='HTML'
                 )
             elif btn_type == "delete":
-                text = f'⁉️ Вы уверены, что хотите удалить промокод {promo_name}?'
+                text = f'<b>💭 Вы уверены, что хотите удалить промокод <code>{promo_name}</code>?</b>'
                 btns = types.InlineKeyboardMarkup(inline_keyboard=[
-                    [types.InlineKeyboardButton(text="❌ Отменить", callback_data=f"promocodeDelete_decline?{promo_name}"), types.InlineKeyboardButton(text="✅ Удалить", callback_data=f"promocodeDelete_accept?{promo_name}")]
+                    [types.InlineKeyboardButton(text="🔴 Отменить", callback_data=f"statspromo_{promocode}"), types.InlineKeyboardButton(text="🟢 Удалить", callback_data=f"promocodeDelete_accept?{promocode}")]
                 ])
                 await call.message.edit_text(
                     text=text,
-                    reply_markup=btns
+                    reply_markup=btns,
+                    parse_mode='HTML'
                 )
             elif btn_type == "edit":
                 btns = types.InlineKeyboardMarkup(inline_keyboard=[
@@ -471,10 +701,15 @@ async def inline_handler(call: types.CallbackQuery, state: FSMContext):
             edit_type = str(call.data).split("_")[1].split("?")[0]
             promo_name = str(call.data).split("?")[1]
             if edit_type == "amount":
-                text = f"💵 Введите новую сумму промокода {promo_name}:"
+                text = f"<b>💰 Введите новую сумму для промокода - <code>{promo_name}</code>:</b>"
                 await call.message.edit_text(
                     text=text,
-                    reply_markup=types.InlineKeyboardMarkup(inline_keyboard=[[]])
+                    reply_markup=types.InlineKeyboardMarkup(inline_keyboard=[
+                        [
+                            types.InlineKeyboardButton(text="❄️", callback_data=f"editpromo_{promo_name}")
+                        ]
+                    ]),
+                    parse_mode='HTML'
                 )
                 await state.set_state(States.edit_promo_amount)
                 await state.update_data(promo_name=promo_name)
@@ -505,9 +740,19 @@ async def inline_handler(call: types.CallbackQuery, state: FSMContext):
                     'shouldWager': True if edit_state == "enable" else False
                 })
                 if api_result["success"] is True:
+                    text=f'''
+<b>🟢 Вы успешно изменили сумму для промокода - <code>{promo_name}</code>!
+
+<blockquote>💰 Новая сумма промокода: {promo_amount}$</blockquote></b>
+'''
                     await call.message.edit_text(
-                        text="✅️ Промокод успешно отредактирован!",
-                        reply_markup=types.InlineKeyboardMarkup(inline_keyboard=[[]])
+                        text=text,
+                        reply_markup=types.InlineKeyboardMarkup(inline_keyboard=[
+                            [
+                                types.InlineKeyboardButton(text="❄️", callback_data=f"statspromo_{promo_name}")
+                            ]
+                        ]),
+                        parse_mode='HTML'
                     )
                 else:
                     raise Exception
@@ -620,7 +865,7 @@ async def inline_handler(call: types.CallbackQuery, state: FSMContext):
             worker_usdt_wallet = DB.get(user_id=worker_id, data="usdt_wallet", table=DB.users_table)
             text = f'''
 👥 Воркер {worker_id} ({worker_name}/@{worker_username}) 
-👛 Привязанные кошельки:
+👛Привязанные кошельки:
 └ BTC: {worker_btc_wallet}
 └ USDT TRC-20: {worker_usdt_wallet}
                 '''
@@ -878,6 +1123,14 @@ async def inline_handler(call: types.CallbackQuery, state: FSMContext):
                 user_id=call.from_user.id, 
                 edit_msg=True
             )
+            if menu == "settings": 
+                materials_btns = types.InlineKeyboardMarkup(inline_keyboard=[
+                    [types.InlineKeyboardButton(text="🎟 Промокоды", callback_data="promo_setts")],
+                    [types.InlineKeyboardButton(text="🔔 Уведомления", callback_data="notif_setts")],
+                    [types.InlineKeyboardButton(text="❄️", callback_data="back_main")]
+                ])
+                await call.message.edit_text('⚙️ Настройки', reply_markup=materials_btns)
+                
             
             elif menu == "admin": await cmd_handler.admin(
                 msg=call.message,

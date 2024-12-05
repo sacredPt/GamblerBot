@@ -58,13 +58,18 @@ async def start_sec_input(msg: types.Message, state: FSMContext):
 @dp.message(States.change_username)
 async def change_username(msg: types.Message, state: FSMContext):
     if msg.text:
+        state_data = await state.get_data()
+        old_message = int(state_data["old_message"])
+        await bot.delete_message(
+            msg.from_user.id,
+            old_message
+        )
+        
         await state.clear()
         new_username = msg.text
         result = DB.update(user_id=msg.from_user.id, column="username", new_data=new_username, table=DB.users_table)
         if result is True:
-            msg2edit = await msg.answer("✅️ Новый ник успешно сохранен!")
-            await asyncio.sleep(2)
-            await utils.show_user_profile(msg=msg, msg2edit=msg2edit)
+            await utils.show_user_profile(msg=msg)
 
 
 @dp.message(States.link_wallet)
@@ -196,8 +201,19 @@ async def edit_promo_amount(msg: types.Message, state: FSMContext):
                 }
             )
             if api_result["success"] is True:
+                text=f'''
+<b>🟢 Вы успешно изменили сумму для промокода - <code>{promo_name}</code>!
+
+<blockquote>💰 Новая сумма промокода: {new_amount}$</blockquote></b>
+'''
                 await msg.answer(
-                    text="✅️ Промокод успешно отредактирован!",
+                    text=text,
+                    reply_markup=types.InlineKeyboardMarkup(inline_keyboard=[
+                        [
+                            types.InlineKeyboardButton(text="❄️", callback_data=f"statspromo_{promo_name}")
+                        ]
+                    ]),
+                    parse_mode='HTML'
                 )
             else:
                 raise Exception
@@ -359,6 +375,7 @@ async def messages_handler(msg: types.Message):
     elif msg.text == "⚙️ Настройки":
         materials_btns = types.InlineKeyboardMarkup(inline_keyboard=[
             [types.InlineKeyboardButton(text="🎟 Промокоды", callback_data="promo_setts")],
+            [types.InlineKeyboardButton(text="🔔 Уведомления", callback_data="notif_setts")],
             [types.InlineKeyboardButton(text="❄️", callback_data="back_main")]
         ])
         await msg.delete()

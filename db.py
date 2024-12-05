@@ -107,6 +107,15 @@ class DB:
             )
         ''')
         conn.commit()
+        
+        cursor.execute('''
+            CREATE TABLE IF NOT EXISTS settings (
+                user_id INTEGER,
+                deposit INTEGER DEFAULT (1),
+                support INTEGER DEFAULT (1) 
+            )
+        ''')
+        conn.commit()
 
     
 
@@ -134,9 +143,45 @@ class DB:
                 'VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)',
                 (user_id, tg_username, tg_firstname, tg_firstname, 0, 0, 50, "auto", "False", 0))
             conn.commit()
+            
+            cursor.execute(
+                'INSERT INTO settings (user_id, deposit, support) '
+                'VALUES (?, ?, ?)',
+                (user_id, 1, 1))
+            conn.commit()
         else:
             pass
-
+             
+    def add_notif_user(user_id: int):
+        cursor.execute(
+            f"SELECT * FROM settings WHERE user_id = ?",
+            (user_id, ))
+        
+        result = cursor.fetchone()
+        if result is None:
+            cursor.execute(
+                'INSERT INTO settings (user_id, deposit, support) '
+                'VALUES (?, ?, ?)',
+                (user_id, 1, 1))
+            conn.commit()
+    
+    def get_notif_user(user_id: int):
+        cursor.execute(
+            f"SELECT * FROM settings WHERE user_id = ?",
+            (user_id, )
+        )
+        
+        result = cursor.fetchone()
+        return result
+    
+    def edit_notif_user(user_id: int, column: str, data: int):
+        try:
+            cursor.execute(f"UPDATE settings SET {column} = ? WHERE user_id = ?", (data, user_id))
+            conn.commit()
+            return True
+        except Exception:
+            return False
+               
     def insert_promo(user_id: int, name: str, ubt: str, amount: int):
         """
         Вставка промика в БД

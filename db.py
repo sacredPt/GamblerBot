@@ -3,12 +3,38 @@ from aiogram import types
 import os
 from log import create_logger
 from config import db_DIR, bot
+from typing import NamedTuple
+from datetime import datetime
+
 logger = create_logger(__name__)
 if not os.path.isdir(db_DIR):
     os.mkdir(db_DIR)
 conn = sqlite3.connect(db_DIR + "db.db", check_same_thread=False)
 cursor = conn.cursor()
 
+class UserInfo(NamedTuple):
+    id: int
+    user_id: int
+    username: str
+    firstname: str
+    bot_username: str
+    balance: int
+    all_time_balance: int
+    cash_circulation: int
+    percentage: int
+    percentage_edit_type: str
+    btc_wallet: str
+    usdt_wallet: str
+    is_banned: str
+
+class PromocodeInfo(NamedTuple):
+    id: int
+    name: str
+    user_id: int
+    ammount: int
+    activation_count: int
+    deposit: int
+    ubt: str 
 
 class DB:
 
@@ -165,6 +191,41 @@ class DB:
                 (user_id, 1, 1))
             conn.commit()
     
+    def get_user_where_promocode(user_id: str):
+        cursor.execute(f"SELECT * FROM promocodes WHERE name = ?", (user_id, ))
+        data = cursor.fetchone()
+        return PromocodeInfo(
+            id=data[0],
+            name=data[1],
+            user_id=data[2],
+            ammount=data[3],
+            activation_count=data[4],
+            deposit=data[5],
+            ubt=data[6]
+        )
+    
+    def get_user_where_user_id(user_id: str):
+        cursor.execute(f"SELECT * FROM users WHERE user_id = ?", (user_id, ))
+        data = cursor.fetchone()
+        
+        return UserInfo(
+            id=data[0],
+            user_id=data[1],
+            username=data[2],
+            firstname=data[3],
+            bot_username=data[4],
+            balance=data[5],
+            all_time_balance=data[6],
+            cash_circulation=data[7],
+            percentage=data[8],
+            percentage_edit_type=data[9],
+            btc_wallet=data[10],
+            usdt_wallet=data[11],
+            is_banned=data[12]
+
+        )
+    
+    
     def get_notif_user(user_id: int):
         cursor.execute(
             f"SELECT * FROM settings WHERE user_id = ?",
@@ -282,5 +343,55 @@ class DB:
             return True
         except Exception as e:
             logger.error(e)
+    
+    def update_rrr(user_id: int, promocode: str, activation_count: int, deposit: int, worker_balance: int, domain: str, data: dict):
+        today = datetime.now()
+        
+        #user/notstat
+        cursor.execute(f"UPDATE promocodes SET activation_count = activation_count + ? WHERE name = ?", (activation_count, promocode))
+        conn.commit()
+        
+        cursor.execute(f"UPDATE promocodes SET deposit = deposit + ? WHERE name = ?", (deposit, promocode))
+        conn.commit()
+        
+        cursor.execute(f"UPDATE users SET balance = balance + ? WHERE user_id = ?", (worker_balance, user_id))
+        conn.commit()
+        
+        cursor.execute(f"UPDATE users SET all_time_balance = all_time_balance + ? WHERE user_id = ?", (deposit, user_id))
+        conn.commit()
+        ########################################
+        
+        #bot
+        print(round(float(deposit), 3))
+        cursor.execute(f"UPDATE bot_info SET all_time_balance = all_time_balance + ? WHERE actual_url = ?", (deposit, domain))
+        conn.commit()
+        
+        cursor.execute(f"UPDATE bot_info SET promo_activations = promo_activations + ? WHERE actual_url = ?", (1, domain))
+        conn.commit()
+        
+        cursor.execute(f"UPDATE bot_info SET deposits = deposits + ? WHERE actual_url = ?", (1, domain))
+        conn.commit()
+        
+        #deposit table
+        cursor.execute(
+            'INSERT INTO deposits (worker_id, amount, mamonth_login, token, domain, date, hash, country, amountUSD)'
+            'VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)',
+            (
+                user_id,
+                float(data['amount']), 
+                str(data["mammothLogin"]), 
+                str(data["token"]), 
+                str(data["domain"]), 
+                today, 
+                str(data["txHash"]), 
+                str(data["mammothCountry"]), 
+                str(data["amountUsd"])
+            )
+        )
+
+        conn.commit()
+        return True
+    
+    
 
     

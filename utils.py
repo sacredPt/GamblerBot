@@ -316,7 +316,7 @@ async def send_newDeposit(data: dict):
 <b>🔥 Хо-хо-хо! Новый депозит!
 ├🦋Никнейм воркера: <code>{worker_username if worker_username else '*****'}</code>
 └❄️Сумма депозита: <code>{data['amountUsd']} $</code></b>
-        """
+"""
     
     
     await bot.send_message(
@@ -327,6 +327,7 @@ async def send_newDeposit(data: dict):
     try:
         res = DB.get_notif_user(user_id)
         if res[1] == 1:
+            
             message_to_user = f'''
 <b>🔥 Хо-хо-хо! Вам пришел депозит!</b>
 
@@ -337,6 +338,7 @@ async def send_newDeposit(data: dict):
 ├⛓️Хэш транзакции: <code>{data['txHash']}</code>
 └🔐Домен: <code>{data['domain']}</code></b></blockquote>
         '''
+            
             await bot.send_message(
                 chat_id=user_id,
                 text=message_to_user,
